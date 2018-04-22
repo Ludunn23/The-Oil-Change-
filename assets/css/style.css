@@ -92,6 +92,20 @@ span.psw {
     cursor: pointer;
 }
 
+#contactinfo {
+    text-align: center;
+    opacity: 60%;
+    margin: 20px;
+}
+#googleMap{
+    margin: 20px;
+}
+#infoPanel {
+    background: url(../images/storepic.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-top: 40px;
+}
 /* Add Zoom Animation */
 .animate {
     -webkit-animation: animatezoom 0.6s;
