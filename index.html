@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
     <!-- <div class="jumbotron">
         <h1 class="display-4">Hello, world!</h1>
         <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or
@@ -22,9 +21,6 @@
             <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
         </p>
     </div> -->
-
-  
-
     <!-- nav bar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#"><img src="https://openclipart.org/image/2400px/svg_to_png/194077/Placeholder.png" width="30" height="30" alt="">The Oil Change</a>
@@ -140,16 +136,26 @@
 
     <!-- coupon container -->
     <div class="container-fluid">
-        
-    </div>
-    <!-- Map container -->
-    <div id="googleMap"></div>
-
-    <!-- contact info -->
-    <div id="contactinfo" ></div>
-
+    <div class = "row" id = "infoPanel">
+      <div class = "col-sm-6">   
+        <!-- Map container -->
+        <div class = "card card-body" id="googleMap">
+          <img src = "assets/images/map.png">
+        </div>
+      </div><!--col-->
+      <div class = "col-sm-6">
+        <!-- contact info -->
+        <div class = "card card-body" id="contactinfo" >
+          <p>Address: 552 N Main St. Spanish Fork, UT 84660</p>
+          <p>Phone: 801-798-7977</p>
+          <p>Email: </p>
+          <p>Hours: Mon-Sat 8am-6pm</p>
+        </div>
+      </div>
+    </div><!--row-->
     <!-- testimonials -->
     <div id="testimonials"></div>
+    </div><!--container-->
 
 </body>
 
