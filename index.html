@@ -1,51 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <title>Document</title>
-  
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
+    <title>The Oil Change</title>
+
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
 
 <body>
   
+
+    <!-- <div class="jumbotron">
+        <h1 class="display-4">Hello, world!</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or
+            information.</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        </p>
+    </div> -->
+
     <!-- nav bar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#"><img src="https://openclipart.org/image/2400px/svg_to_png/194077/Placeholder.png" width="30" height="30" alt="">The Oil Change</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-              
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="servicemenu.html">Service Menu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="faqs.html">FAQ's</a>
-                    </li>
-                    <li class="nav-item">
-                        <!-- nav bar client login --> 
-   <div>
-       <!-- <h2>Location</h2> --> 
-        <div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="https://openclipart.org/image/2400px/svg_to_png/194077/Placeholder.png" width="30" height="30" alt="">The Oil Change</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="servicemenu.html">Service Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="faqs.html">FAQ's</a>
+                </li>
+                <li class="nav-item">
+                    <!-- <a class="nav-link" href="#">Login</a> -->
+                    <!-- nav bar client login -->
+                    <!-- <div> -->
+                    <!-- <h2>Location</h2> -->
+                    <!-- <div>
             <img src="">
         </div>
-    </div>
+    </div> -->
 
-    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+                    <button class='btn btn-link' onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+
+                    <!--    <a class="nav-link" href="#">Login</a> -->
+                    <!-- Client Login End -->
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="myvehicles.html">My Vehicles</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <div id="id01" class="modal">
 
@@ -77,9 +103,10 @@
                 <span class="psw">Forgot
                     <a href="#">password?</a>
                 </span>
+
             </div>
         </form>
-    </div>
+
   <!--    <a class="nav-link" href="#">Login</a> --> 
     <!-- Client Login End --> 
                         
@@ -99,11 +126,15 @@
 
 <!-- End Navbar --> 
 
+
+
 <!-- Coupon Here  -->
 <div class="jumbotron">
     <h1 class="display-4">Hello, world!</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or
-        information.</p>
+
+    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
+    </p>
+
     <hr class="my-4">
     <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
     <p class="lead">
@@ -124,23 +155,78 @@
             if (event.target == modal) {
                 modal.style.display = "none";
             }
+
+<!-- Coupon End -->
+
+<script>
+
+
+
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+
         }
-    </script>
+    }
+</script>
+
 
 
     <!-- coupon container -->
     <div class="container-fluid">
+    <div class = "row" id = "infoPanel">
+      <div class = "col-sm-6">   
+        <!-- Map container -->
+        <div class = "card card-body" id="googleMap">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12204.556881236738!2d-111.6537362!3d40.1169008!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9b1f190ffae11b2a!2sOil+Change!5e0!3m2!1sen!2sus!4v1525033663500" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+      </div><!--col-->
+      <div class = "col-sm-6">
+        <!-- contact info -->
+        <div class = "card card-body" id="contactinfo" >
+                <p>The Oil Change Spanish Fork</p>
+                <p>Address: 552 N Main St, Spanish Fork, UT 84660</p>
+                <p>Phone: (801) 798-7877</p>
+                <p>Hours: M-F 8:00am-6:00pm | Sat 8:00am-4:00pm | Closed Sundays</p>
+
+        </div>
+    </div>
+    <!--row-->
+    <!-- testimonials -->
+    <h1 class="display-4 text-center">Testimonials</h1>
+    <div class="card">
+        <div class="card-body">
+            <p class="lead text-center">I have never been to a better place for oil and service to my vehicles! Mac and his staff are friendly, courteous,
+                knowledgeable and willing to take care of you anyway they can. Won’t go anywhere else!
+            <small class= "text-center">
+            --Grant Coombs</small></p>
+        <br>
+    
+    
+        
+            <p class="lead text-center">Best customer service! As a female- I didn’t feel like I was being taken advantage of. I felt respected and taken
+                care of- as was my car!
+            <small class="text-center"> --Corinne Versluys Hoyt</small></p>
+        
+    <br>
+    
+        
+            <p class="lead text-center">Mac has always been top notch in caring for our cars! The service was fast and if another service was recommended,
+                he prioritizes the recommendation, helps recommend where the service can be addressed, and speaks respectfully.
+                Excellent care and customer service!
+            <small class="text-muted text-center"> --Jacquie Devereaux Carter</small></p>
         
     </div>
-    <!-- Map container -->
-    <div id="googleMap"></div>
+    </div>
+    <!--container-->
 
-    <!-- contact info -->
-    <div id="contactinfo" ></div>
 
-    <!-- testimonials -->
-    <div id="testimonials"></div>
+    </body>
 
-</body>
-
-</html>
+    </html>
