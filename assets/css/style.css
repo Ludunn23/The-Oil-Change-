@@ -14,8 +14,8 @@ input[type=text], input[type=password] {
 button {
     background-color: #4CAF50;
     color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
+    /* padding: 14px 20px; */
+    /* margin: 8px 0; */
     border: none;
     cursor: pointer;
     width: 100%;
@@ -52,7 +52,9 @@ span.psw {
     float: right;
     padding-top: 16px;
 }
+/* Style for testimonials*/
 
+  
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -92,10 +94,41 @@ span.psw {
     cursor: pointer;
 }
 
+#contactinfo {
+    text-align: center;
+    opacity: 60%;
+    margin: 20px;
+}
+#googleMap{
+    margin: 20px;
+}
+#infoPanel {
+    background: url(../images/storepic.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-top: 40px;
+}
 /* Add Zoom Animation */
 .animate {
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s
+}
+#menu {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+#menu-header {
+    background: green;
+    color: white;
+} 
+
+#quaker-state {
+    color: yellow;
+}
+.trademark {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10px;
+    font-variant-position: super;
 }
 
 @-webkit-keyframes animatezoom {
