@@ -3,6 +3,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
 
+
 var PORT = process.env.PORT || 8080;
 
 //initialization
@@ -16,8 +17,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 //routing
-require("./controllers/api-routes.js")(app);
-require("./controllers/html-routes.js")(app);
+var apiRoutes = require("./controllers/api-routes.js");
+var htmlRoutes = require("./controllers/html-routes");
 
 //listener
 app.listen(PORT, function(){
