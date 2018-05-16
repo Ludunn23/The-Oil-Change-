@@ -52,7 +52,9 @@ span.psw {
     float: right;
     padding-top: 16px;
 }
+/* Style for testimonials*/
 
+  
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -148,4 +150,8 @@ span.psw {
     .cancelbtn {
        width: 100%;
     }
+}
+
+#list {
+    width: 25%;
 }
