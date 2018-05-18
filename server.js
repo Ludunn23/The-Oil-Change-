@@ -12,6 +12,10 @@ var app = express();
 //static content(public folder)
 app.use(express.static(path.join(__dirname, '/public')));
 
+
+//models for syncing
+var db = require("./models");
+
 //parsing
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -21,6 +25,10 @@ var apiRoutes = require("./controllers/api-routes.js");
 var htmlRoutes = require("./controllers/html-routes");
 
 //listener
+
+db.sequelize.sync({}).then(function() {
 app.listen(PORT, function(){
     console.log("App listening on http://localhost:" + PORT);
+});
+
 });
