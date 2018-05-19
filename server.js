@@ -20,8 +20,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 //routing
-var apiRoutes = require("./controllers/api-routes.js");
+// require("./controllers/api-routes")(app);
+// require("./controllers/html-routes")(app);
+var apiRoutes = require("./controllers/api-routes");
 var htmlRoutes = require("./controllers/html-routes");
+app.use("/", apiRoutes);
+app.use("/", htmlRoutes);
+
 
 //listener
 db.sequelize.sync({}).then(function() {
