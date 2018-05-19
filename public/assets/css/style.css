@@ -130,6 +130,12 @@ span.psw {
     font-size: 10px;
     font-variant-position: super;
 }
+.coupon {
+    text-align: center;
+    margin: 20px;
+    width: 50%;
+    align: right;
+}
 
 @-webkit-keyframes animatezoom {
     from {-webkit-transform: scale(0)} 
