@@ -12,7 +12,6 @@ var app = express();
 //static content(public folder)
 app.use(express.static(path.join(__dirname, '/public')));
 
-
 //models for syncing
 var db = require("./models");
 
@@ -21,14 +20,17 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 //routing
-var apiRoutes = require("./controllers/api-routes.js");
+// require("./controllers/api-routes")(app);
+// require("./controllers/html-routes")(app);
+var apiRoutes = require("./controllers/api-routes");
 var htmlRoutes = require("./controllers/html-routes");
+app.use("/", apiRoutes);
+app.use("/", htmlRoutes);
+
 
 //listener
-
 db.sequelize.sync({}).then(function() {
 app.listen(PORT, function(){
     console.log("App listening on http://localhost:" + PORT);
 });
-
 });
