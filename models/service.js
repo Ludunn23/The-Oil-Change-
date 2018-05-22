@@ -8,6 +8,10 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
+        mileage: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         url: {
             type: DataTypes.STRING,
             allowNull: false
