@@ -7,7 +7,7 @@ module.exports = {
       "username": process.env.JAWSDB_USERNAME,
       "password": process.env.JAWSDB_PASSWORD,
       "database": process.env.JAWSDB_DATABASE,
-      "host": "127.0.0.1",
+      "host": "process.env.JAWSDB_HOST",
       "dialect": "mysql"
     },
     "test": {
