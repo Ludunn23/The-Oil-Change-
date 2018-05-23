@@ -5,7 +5,7 @@ var path = require("path");
 var Sequelize = require("sequelize");
 var basename = path.basename(module.filename);
 var env = process.env.NODE_ENV || "development";
-var config = (process.env.JAWSDB_URL) ? require(__dirname + "/../config/config.js")[env]: process.env.JAWSDB_URL;
+var config = (process.env.JAWSDB_URL) ?  process.env.JAWSDB_URL: require(__dirname + "/../config/config.json")[env];
 var db = {};
 
 if (config.use_env_variable) {
