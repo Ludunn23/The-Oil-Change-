@@ -34,9 +34,119 @@
                   </ul>
                 </div>
               </nav>
-              
+
+              <div id="faq_0" class="faq-section group">
+                  <h3>Store Information</h3>
+                  <hr>
+                  <div class="faq group">
+                      <button class="accordion">What are The Oil Change hours of operation?</button>
+                      <div class="panel">
+                        <p>Hours: M-F 8:00am-6:00pm | Sat 8:00am-4:00pm | Closed Sundays</p>
+                      </div>
+                    
+                      <button class="accordion">What is the The Oil Change address?</button>
+                      <div class="panel">
+                        <p>Address: 552 N Main St, Spanish Fork, UT 84660</p>
+                      </div>
+                    
+                      <button class="accordion">What is the The Oil Change phone number?</button>
+                      <div class="panel">
+                        <p>Phone: (801) 798-7877</p>
+                      </div>
+
+                      <button class="accordion">What services do you offer?</button>
+                      <div class="panel">
+                        <p>Click <a href="file:///Users/dansasaki/Repo/The-Oil-Change-/servicemenu.html">here for the services</a> that we provide.</p>
+                      </div>
+                      <h3>Account Information</h3>
+                      <hr>
+                      <button class="accordion">How do I log into my account?</button>
+                      <div class="panel">
+                        <p>Check out our <a href="#">login page here.</a></p>
+                      </div>
+                      <button class="accordion">What does creating an account offer?</button>
+                      <div class="panel">
+                        <p>You can create an account so that you can view your service records The Oil Change has provided
+                        which will include the date of service and your vehicles mileage.
+                        </p>
+                      </div>
+                      <h3>Discounts</h3>
+                      <hr>
+                      <button class="accordion">Do you offer any discounts or coupons?</button>
+                      <div class="panel">
+                        <p>Yes, we do!  Please click the following link to get your <a href="#">coupon.</a></p>
+                      </div>
+              </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+  
+  for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+          /* Toggle between adding and removing the "active" class,
+          to highlight the button that controls the panel */
+          this.classList.toggle("active1");
+  
+          /* Toggle between hiding and showing the active panel */
+          var panel = this.nextElementSibling;
+          if (panel.style.display === "block") {
+              panel.style.display = "none";
+          } else {
+              panel.style.display = "block";
+          }
+      });
+  }
+</script>
+<style>
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: rgb(255, 255, 255);
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.accordion:hover {
+  background-color:#11843D;
+  color: white;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  padding-top: 18px;
+  background-color:#11843D;
+  color: white;
+  display: none;
+  overflow: hidden;
+}
+.accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #11843D;
+    float: left;
+    margin-right: 10px;
+}
+
+.active1:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+    color: #11843D;
+  }
+
+h3 {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+</style>
 </body>
 </html>
