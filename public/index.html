@@ -94,7 +94,10 @@
     <img src="./assets/images/speedometer.jpg" class="img-fluid" alt="Responsive image">
 
     <!-- Coupon Here  -->
-    <button type="button" class="btn btn-outline-success btn-lg btn-block">GET $10 OFF YOUR NEXT OIL CHANGE! CLICK FOR DETAILS. </button>
+    <button class="accordion" type="button" class="btn btn-outline-success btn-lg btn-block">GET $10 OFF YOUR NEXT OIL CHANGE! CLICK FOR DETAILS. </button>
+                      <div class="panel">
+                        <p><img src = "assets/images/The Oil Change coupon.png" class="coupcenter"></p>
+                      </div>
     <!-- Coupon End -->
 
     <div class="container-fluid">
@@ -119,15 +122,7 @@
                 </div>
             </div>
         </div>
-        <!--Coupon-->
-
-        <!--row-->
-        <!-- testimonials -->
-        
-        
-
-
-<<<<<<< HEAD
+    
     </div>
     <!--row-->
     <!-- testimonials -->
@@ -176,6 +171,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script>
+        
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+  
+  for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+          /* Toggle between adding and removing the "active" class,
+          to highlight the button that controls the panel */
+          this.classList.toggle("active1");
+  
+          /* Toggle between hiding and showing the active panel */
+          var panel = this.nextElementSibling;
+          if (panel.style.display === "block") {
+              panel.style.display = "none";
+          } else {
+              panel.style.display = "block";
+          }
+      });
+  }
+
         // Get the modal
         var modal = document.getElementById('id01');
 
@@ -183,45 +198,69 @@
         window.onclick = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
-=======
+            }
 
-                <p class="lead text-center">Best customer service! As a female- I didn’t feel like I was being taken advantage of. I felt respected and
-                    taken care of- as was my car!
-                    <small class="text-center"> --Corinne Versluys Hoyt</small>
-                </p>
+        }
 
-                <br>
-
-
-                <p class="lead text-center">Mac has always been top notch in caring for our cars! The service was fast and if another service was recommended,
-                    he prioritizes the recommendation, helps recommend where the service can be addressed, and speaks respectfully.
-                    Excellent care and customer service!
-                    <small class="text-muted text-center"> --Jacquie Devereaux Carter</small>
-                </p>
-
-            </div>
-        </div>
-        <!--container-->
+    </script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
             crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
             crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
-        <script>
-            // Get the modal
-            var modal = document.getElementById('id01');
-
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function (event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
->>>>>>> c23e4f01838dd7cb4bbd57d30da0d1cff2f1cdfa
-
-            }
-
-        </script>
+            <style>
+                    /* Style the buttons that are used to open and close the accordion panel */
+                    .accordion {
+                        margin-top: 20px;
+                      background-color: rgb(255, 255, 255);
+                      color: #444;
+                      cursor: pointer;
+                      padding: 18px;
+                      width: 100%;
+                      text-align: center;
+                      border: none;
+                      outline: none;
+                      transition: 0.4s;
+                      color: #11843D;
+                    }
+                    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+                    .accordion:hover {
+                      background-color:#11843D;
+                      color: white;
+                    }
+                    /* Style the accordion panel. Note: hidden by default */
+                    .panel {
+                      padding: 0 18px;
+                      padding-top: 18px;
+                      background-color:#11843D;
+                      color: white;
+                      display: none;
+                      overflow: hidden;
+                    }
+                    .accordion:after {
+                       
+                        font-size: 13px;
+                        color: #11843D;
+                        
+                        margin-right: 10px;
+                    }
+                    .active1:after {
+                        
+                        color: #11843D;
+                      }
+                    h3 {
+                      margin-top: 20px;
+                      margin-left: 20px;
+                    }
+                    .coupcenter {
+                        display: block;
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 50%;
+                    }
+                    </style>
+        
 </body>
 
 </html>
