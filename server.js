@@ -20,8 +20,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 //routing
-// require("./controllers/api-routes")(app);
-// require("./controllers/html-routes")(app);
 var apiRoutes = require("./controllers/api-routes");
 var htmlRoutes = require("./controllers/html-routes");
 app.use("/", apiRoutes);
@@ -29,7 +27,7 @@ app.use("/", htmlRoutes);
 
 
 //listener
-db.sequelize.sync({}).then(function() {
+db.sequelize.sync({force: true}).then(function() {
 app.listen(PORT, function(){
     console.log("App listening on http://localhost:" + PORT);
 });

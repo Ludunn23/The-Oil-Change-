@@ -11,11 +11,11 @@ router.get("/api/customers", function(req, res) {
     });
 });
 
-//get all of a customer's vehicles
+//get all vehicles
 router.get("/api/cars/", function(req, res) {
     var query = {};
-    if(req.query.customerid) {
-        query.customerid = req.query.customerid;
+    if(req.query.CustomerId) {
+        query.CustomerId = req.query.CustomerId;
     }
 
     db.Car.findAll({
@@ -26,11 +26,11 @@ router.get("/api/cars/", function(req, res) {
     })
 });
 
-//get a vehicle's service history
+//get all service history
 router.get("/api/services", function(req, res) {
     var query = {};
-    if(req.query.carid) {
-        query.carid = req.query.carid;
+    if(req.query.CarId) {
+        query.CarId = req.query.CarId;
     }
 
     db.Service.findAll({
@@ -40,6 +40,32 @@ router.get("/api/services", function(req, res) {
         res.json(result);
     })
 });
+
+//get all of one customer's cars
+router.get("/api/cars/:CustomerId", function(req, res) {
+    var query = {};
+    query.CustomerId = req.params.CustomerId;
+
+    db.Car.findAll({
+        where: query,
+        include: [db.Customer]
+    }).then(function(result) {
+        res.json(result);
+    });
+});
+
+//get the service history for one vehicle
+router.get("/api/services/:CarId", function(req, res) {
+    var query = {};
+    query.CarId = req.params.CarId;
+
+    db.Service.findAll({
+        where: query,
+        include: [db.Car]
+    }).then(function(result) {
+        res.json(result);
+    });
+})
 
 //add a new customer
 router.post("/api/customer", function(req, res) {

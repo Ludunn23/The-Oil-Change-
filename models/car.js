@@ -15,6 +15,10 @@ module.exports = function(sequelize, DataTypes) {
         year: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        mileage: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
 
     });
