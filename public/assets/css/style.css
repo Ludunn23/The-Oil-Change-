@@ -103,10 +103,14 @@ span.psw {
     margin: 20px;
 }
 #infoPanel {
-    background: url(../images/storepic.png);
+    
     background-repeat: no-repeat;
     background-size: 100%;
     margin-top: 40px;
+}
+.speedometer {
+    height: 20%;
+    
 }
 /* Add Zoom Animation */
 .animate {
