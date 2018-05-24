@@ -136,6 +136,21 @@ span.psw {
     width: 50%;
     align: right;
 }
+/* css to size logo in the navbar*/
+.navbar-brand {
+    padding: 0px; 
+  }
+  .navbar-brand>img {
+    height: 25%;
+    padding: 15px; 
+    width: 200px;
+  }
+  #navbarSupportedContent ul {
+    justify-content: space-between;
+    min-width: 500px;
+    width: 85%;
+}
+
 
 @-webkit-keyframes animatezoom {
     from {-webkit-transform: scale(0)} 
