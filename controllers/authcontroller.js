@@ -1,3 +1,4 @@
+var db = require("../models");
 var exports = module.exports = {}
  
 exports.signup = function(req, res) {
@@ -13,8 +14,16 @@ exports.signin = function(req, res) {
 }
 
 exports.dashboard = function(req, res) {
- 
-    res.render('dashboard');
+    console.log(req.user);
+    db.Car.findAll({
+        where: {Customerid: req.user.id}
+    }).then(function(result) {
+        res.render('myvehicles', {
+            user: req.user,
+            cars: result
+        });
+    })
+    // res.render('dashboard');
  
 }
 
