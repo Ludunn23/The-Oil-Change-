@@ -1,4 +1,4 @@
-body {font-family: Arial, Helvetica, sans-serif;}
+body {font-family: 'Roboto', Arial, Helvetica, sans-serif;}
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
@@ -53,7 +53,19 @@ span.psw {
     padding-top: 16px;
 }
 /* Style for testimonials*/
-
+.display-3 {
+    text-shadow: 2px 2px 4px #f44336;
+    color: black;
+    padding-bottom: 20px;
+}
+.lead {
+    color: black;
+    text-shadow: .5px .5px 4px #f44336;
+    padding-bottom: 20px;
+}
+.jumbotron {
+    background-color: white;
+}
   
 /* The Modal (background) */
 .modal {
@@ -108,9 +120,99 @@ span.psw {
     background-size: 100%;
     margin-top: 40px;
 }
-.speedometer {
-    height: 20%;
-    
+
+/* Testimonials */
+h2 {
+	color: #333;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: "Roboto", sans-serif;
+	font-weight: bold;
+	position: relative;
+	margin: 30px 0 60px;
+}
+h2::after {
+	content: "";
+	width: 100px;
+	position: absolute;
+	margin: 0 auto;
+	height: 3px;
+	background: #8fbc54;
+	left: 0;
+	right: 0;
+	bottom: -10px;
+}
+.col-center {
+	margin: 0 auto;
+	float: none !important;
+}
+.carousel {
+	margin: 50px auto;
+	padding: 0 70px;
+}
+.carousel .item {
+	color: #999;
+	font-size: 14px;
+    text-align: center;
+	overflow: hidden;
+    min-height: 290px;
+}
+.carousel .item .img-box {
+	width: 135px;
+	height: 135px;
+	margin: 0 auto;
+	padding: 5px;
+	border: 1px solid #ddd;
+	border-radius: 50%;
+}
+.carousel .img-box img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	border-radius: 50%;
+}
+.carousel .testimonial {
+	padding: 30px 0 10px;
+}
+.carousel .overview {	
+	font-style: italic;
+}
+.carousel .overview b {
+	text-transform: uppercase;
+	color: #7AA641;
+}
+.carousel .carousel-control {
+	width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    top: 50%;
+	background: none;
+}
+.carousel-control i {
+    font-size: 68px;
+	line-height: 42px;
+    position: absolute;
+    display: inline-block;
+	color: rgba(0, 0, 0, 0.8);
+    text-shadow: 0 3px 3px #e6e6e6, 0 0 0 #000;
+}
+.carousel .carousel-indicators {
+	bottom: -40px;
+}
+.carousel-indicators li, .carousel-indicators li.active {
+	width: 10px;
+	height: 10px;
+	margin: 1px 3px;
+	border-radius: 50%;
+}
+.carousel-indicators li {	
+	background: #999;
+	border-color: transparent;
+	box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
+}
+.carousel-indicators li.active {	
+	background: #555;		
+	box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
 }
 /* Add Zoom Animation */
 .animate {
@@ -150,9 +252,16 @@ span.psw {
     width: 200px;
   }
   #navbarSupportedContent ul {
-    justify-content: space-between;
+    justify-content: space-evenly;
     min-width: 500px;
     width: 85%;
+}
+.nav-link {
+    font-weight: 900;
+    font-size: 28px;
+}
+.nav-link:hover, .nav-link:active{
+    text-shadow: 2px 2px 4px #f44336;
 }
 
 
@@ -179,4 +288,18 @@ span.psw {
 
 #list {
     width: 25%;
+}
+.tdprice {
+    text-align: right;
+}
+td {
+    width: 90%;
+}
+#bottomContainer {
+    margin-top: 20px;
+    padding: 20;
+    background-color: rgb(207, 207, 207);
+}
+.card{
+    border: none;
 }
