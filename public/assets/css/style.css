@@ -244,6 +244,10 @@ h2::after {
     min-width: 500px;
     width: 85%;
 }
+.nav-link {
+    font-weight: 900;
+    font-size: 28px;
+}
 
 
 @-webkit-keyframes animatezoom {
@@ -269,4 +273,10 @@ h2::after {
 
 #list {
     width: 25%;
+}
+.tdprice {
+    text-align: right;
+}
+td {
+    width: 90%;
 }
