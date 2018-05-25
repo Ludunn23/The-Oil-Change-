@@ -26,6 +26,10 @@ var router = require('express').Router();
 
     router.get("/admin", function(req, res) {
         res.sendFile(path.join(__dirname, "../public/admin.html"));
-    })
+    });
+
+    router.get("/logintest", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/loginTest.html"));
+    });
 
     module.exports = router;

@@ -1,0 +1,56 @@
+<!-- views/myVehicles.handlebars -->
+{{#if user}}
+  <div class="jumbotron">
+    <h1>JawsDB User Authentication</h1>
+    <p>Below is your profile information!</p>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Profile Information</h3>
+    </div>
+    <div class="panel-body">
+      <p>Username: {{user.username}}</p>
+    </div>
+    <div class = "panel-body">
+      <table class = "table table-bordered">
+        <thead>
+          <th>VIN</th>
+          <th>Make</th>
+          <th>Model</th>
+          <th>Year</th>
+          <th>Mileage</th>
+          <th>Service History</th>
+        </thead>
+        <tbody>
+          {{#each cars}}
+          <tr>
+            <td>{{vin}}</td>
+            <td>{{make}}</td>
+            <td>{{model}}</td>
+            <td>{{year}}</td>
+            <td>{{mileage}}</td>
+            <td><button class = "btn btn-primary service-button" id = "services-{{id}}">Service History</button></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+{{else}}
+  <div class="jumbotron">
+    <h1>JawsDB User Authentication</h1>
+    <p>Sign in and view your profile!</p>
+    <p>
+      <a href="/signin" class="btn btn-primary btn-lg" role="button">
+        <span class="glyphicon glyphicon-user"></span>
+        Sign in!
+      </a>
+      <a href="/signup" class="btn btn-primary btn-lg" role="button">
+        <span class="glyphicon glyphicon-user"></span>
+        Sign up!
+      </a>
+    </p>
+  </div>
+
+{{/if}}
