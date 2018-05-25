@@ -53,7 +53,19 @@ span.psw {
     padding-top: 16px;
 }
 /* Style for testimonials*/
-
+.display-3 {
+    text-shadow: 2px 2px 4px #f44336;
+    color: black;
+    padding-bottom: 20px;
+}
+.lead {
+    color: black;
+    text-shadow: .5px .5px 4px #f44336;
+    padding-bottom: 20px;
+}
+.jumbotron {
+    background-color: white;
+}
   
 /* The Modal (background) */
 .modal {
