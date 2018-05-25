@@ -17,8 +17,14 @@
     <!-- nav bar -->
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
+
+
+
         <a class="navbar-brand" href="index.html">
             <img src="./assets/images/oil_change_logo.jpg" alt="The oil change">
+
+
+
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -47,8 +53,10 @@
         </div>
     </nav>
 
+
     <!--end of navbar-->
     <!--begining of modal-->
+
 
     <div id="id01" class="modal">
 
@@ -85,17 +93,25 @@
         </form>
     </div>
     <!--modal-->
+
+
+    <!-- End Navbar -->
     <!-- top image  -->
     <div class="speedometer">
-        <img src="./assets/images/speedometer.jpg" class="img-fluid" alt="Responsive image">
+        <!-- <img src="./assets/images/speedometer.jpg" class="img-fluid" alt="Responsive image"> -->
+        <img src="./assets/images/engine.jpeg" class="img-fluid" alt="Responsive image">
+
     </div>
     <br>
     <br>
 
     <!-- Coupon Here  -->
-    <button type="button" class="btn btn-outline-success btn-lg btn-block">GET $10 OFF YOUR NEXT OIL CHANGE! CLICK FOR DETAILS. </button>
-    <!-- Coupon End -->
 
+    <button class="accordion" type="button" class="btn btn-outline-success btn-lg btn-block">GET $10 OFF YOUR NEXT OIL CHANGE! CLICK FOR DETAILS. </button>
+                      <div class="panel">
+                        <p><img src = "assets/images/The Oil Change coupon.png" class="coupcenter"></p>
+                      </div>
+    <!-- Coupon End -->
 
     <div class="container-fluid">
         <div class="row" id="infoPanel">
@@ -119,38 +135,55 @@
                 </div>
             </div>
         </div>
-        <!--Coupon-->
 
+        <!--Coupon-->
 
         <!--row-->
         <!-- testimonials -->
-        <h1 class="display-4 text-center">Testimonials</h1>
-        <div class="card">
-            <div class="card-body">
-                <p class="lead text-center">I have never been to a better place for oil and service to my vehicles! Mac and his staff are friendly, courteous,
-                    knowledgeable and willing to take care of you anyway they can. Won’t go anywhere else!
-                    <small class="text-center">
-                        --Grant Coombs</small>
-                </p>
-                <br>
-
-
-
-                <p class="lead text-center">Best customer service! As a female- I didn’t feel like I was being taken advantage of. I felt respected and
-                    taken care of- as was my car!
-                    <small class="text-center"> --Corinne Versluys Hoyt</small>
-                </p>
-
-                <br>
-
-
-                <p class="lead text-center">Mac has always been top notch in caring for our cars! The service was fast and if another service was recommended,
-                    he prioritizes the recommendation, helps recommend where the service can be addressed, and speaks respectfully.
-                    Excellent care and customer service!
-                    <small class="text-muted text-center"> --Jacquie Devereaux Carter</small>
-                </p>
-
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-center m-auto">
+                    <h2>Testimonials</h2>
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Carousel indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>   
+                        <!-- Wrapper for carousel items -->
+                        <div class="carousel-inner">
+                            <div class="item carousel-item active">
+                                <div class="img-box"><img src="./assets/images/GCoomes.jpg" alt=""></div>
+                                <p class="testimonial">I have never been to a better place for oil and service to my vehicles! Mac and his staff are friendly,
+                                    courteous, knowledgeable and willing to take care of you anyway they can. Won’t go anywhere else!</p>
+                                <p class="overview"><b>Grant Coombs</b></p>
+                            </div>
+                            <div class="item carousel-item">
+                                <div class="img-box"><img src="./assets/images/choyt.jpg" alt=""></div>
+                                <p class="testimonial">Best customer service! As a female- I didn’t feel like I was being taken advantage of. I felt respected
+                                    and taken care of- as was my car!</p>
+                                <p class="overview"><b>Corinne Versluys Hoyt</b></p>
+                            </div>
+                            <div class="item carousel-item">
+                                <div class="img-box"><img src="./assets/images/jcarter.jpg" alt=""></div>
+                                <p class="testimonial">Mac has always been top notch in caring for our cars! The service was fast and if another service was
+                                    recommended, he prioritizes the recommendation, helps recommend where the service can be addressed,
+                                    and speaks respectfully. Excellent care and customer service!</p>
+                                <p class="overview"><b>Jacquie Devereaux Carter</b></p>
+                            </div>
+                        </div>
+                        <!-- Carousel controls -->
+                        <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
+
         </div>
 
         <!-- End Navbar -->
@@ -167,34 +200,18 @@
                 </a>
                 <p class="text-muted">The Oil Change</p>
             </footer>
+
         </div>
         <!--container-->
+
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
             crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
             crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
+
         <script>
-            var acc = document.getElementsByClassName("accordion");
-            var i;
-
-            for (i = 0; i < acc.length; i++) {
-                acc[i].addEventListener("click", function () {
-                    /* Toggle between adding and removing the "active" class,
-                    to highlight the button that controls the panel */
-                    this.classList.toggle("active1");
-
-                    /* Toggle between hiding and showing the active panel */
-                    var panel = this.nextElementSibling;
-                    if (panel.style.display === "block") {
-                        panel.style.display = "none";
-                    } else {
-                        panel.style.display = "block";
-                    }
-                });
-            }
-
             // Get the modal
             var modal = document.getElementById('id01');
 
@@ -203,6 +220,7 @@
                 if (event.target == modal) {
                     modal.style.display = "none";
                 }
+
 
             }
         </script>
@@ -238,35 +256,10 @@
                 color: white;
                 display: none;
                 overflow: hidden;
+
             }
 
-            .accordion:after {
-
-                font-size: 13px;
-                color: #11843D;
-
-                margin-right: 10px;
-            }
-
-            .active1:after {
-
-                color: #11843D;
-            }
-
-            h3 {
-                margin-top: 20px;
-                margin-left: 20px;
-            }
-
-            .coupcenter {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                width: 50%;
-            }
-        </style>
-
-
-
+        </script>
+</body>
 
 </html>
