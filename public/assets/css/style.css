@@ -154,6 +154,10 @@ span.psw {
     min-width: 500px;
     width: 85%;
 }
+.nav-link {
+    font-weight: 900;
+    font-size: 28px;
+}
 
 
 @-webkit-keyframes animatezoom {
