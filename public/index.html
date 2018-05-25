@@ -19,8 +19,10 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
 
 
+
         <a class="navbar-brand" href="index.html">
             <img src="./assets/images/oil_change_logo.jpg" alt="The oil change">
+
 
 
         </a>
@@ -181,6 +183,24 @@
                     </div>
                 </div>
             </div>
+
+        </div>
+
+        <!-- End Navbar -->
+
+
+        <div class="container-fluid text-center">
+            <footer class="footer" style="margin: 20px">
+
+                <a href="https://www.facebook.com/The-Oil-Change-481508488547041/" target="_blank">
+                    <img src="assets/images/facebook.svg" alt="facebook icon" width="40" height="40" hspace="5">
+                </a>
+                <a href="https://www.yelp.com/biz/oil-change-spanish-fork?osq=the+oil+change" target="_blank">
+                    <img src="assets/images/yelp.svg" alt="yelp icon" width="64" height="64" hspace="5">
+                </a>
+                <p class="text-muted">The Oil Change</p>
+            </footer>
+
         </div>
         <!--container-->
 
@@ -200,67 +220,46 @@
                 if (event.target == modal) {
                     modal.style.display = "none";
                 }
+
+
+            }
+        </script>
+
+        <style>
+            .accordion {
+                margin-top: 20px;
+                background-color: rgb(255, 255, 255);
+                color: #444;
+                cursor: pointer;
+                padding: 18px;
+                width: 100%;
+                text-align: center;
+                border: none;
+                outline: none;
+                transition: 0.4s;
+                color: #11843D;
+            }
+
+            /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+
+            .accordion:hover {
+                background-color: #11843D;
+                color: white;
+            }
+
+            /* Style the accordion panel. Note: hidden by default */
+
+            .panel {
+                padding: 0 18px;
+                padding-top: 18px;
+                background-color: #11843D;
+                color: white;
+                display: none;
+                overflow: hidden;
+
             }
 
         </script>
 </body>
 
 </html>
-
-            <style>
-                    /* Style the buttons that are used to open and close the accordion panel */
-                    .accordion {
-                        margin-top: 20px;
-                      background-color: rgb(255, 255, 255);
-                      color: #444;
-                      cursor: pointer;
-                      padding: 18px;
-                      width: 100%;
-                      text-align: center;
-                      border: none;
-                      outline: none;
-                      transition: 0.4s;
-                      color: #11843D;
-                    }
-                    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-                    .accordion:hover {
-                      background-color:#11843D;
-                      color: white;
-                    }
-                    /* Style the accordion panel. Note: hidden by default */
-                    .panel {
-                      padding: 0 18px;
-                      padding-top: 18px;
-                      background-color:#11843D;
-                      color: white;
-                      display: none;
-                      overflow: hidden;
-                    }
-                    .accordion:after {
-                       
-                        font-size: 13px;
-                        color: #11843D;
-                        
-                        margin-right: 10px;
-                    }
-                    .active1:after {
-                        
-                        color: #11843D;
-                      }
-                    h3 {
-                      margin-top: 20px;
-                      margin-left: 20px;
-                    }
-                    .coupcenter {
-                        display: block;
-                        margin-left: auto;
-                        margin-right: auto;
-                        width: 50%;
-                    }
-                    </style>
-        
-</body>
-
-
-             </html>
-
