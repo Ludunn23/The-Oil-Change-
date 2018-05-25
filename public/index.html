@@ -17,18 +17,17 @@
     <!-- nav bar -->
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.html">
             <img src="./assets/images/oil_change_logo.jpg" alt="The oil change">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home
+                    <a class="nav-link" href="index.html">Home
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
@@ -39,7 +38,7 @@
                     <a class="nav-link" href="faqs.html">FAQ's</a>
                 </li>
                 <li class="nav-item">
-                    <button class='btn btn-link' onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+                    <a class="nav-link" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="myvehicles.html">My Vehicles</a>
@@ -47,11 +46,8 @@
             </ul>
         </div>
     </nav>
-
-
-    <!-- <img src="/public/assets/images/OIl change logo.png" alt="The oil change" style="max-width:100px; margin-top: -7px;"> -->
-
-
+    <!--end of navbar-->
+    <!--begining of modal-->
     <div id="id01" class="modal">
 
         <form class="modal-content animate" action="/action_page.php">
@@ -89,13 +85,17 @@
     <!--modal-->
 
 
-    <!-- End Navbar -->
     <!-- top image  -->
-    <img src="./assets/images/speedometer.jpg" class="img-fluid" alt="Responsive image">
+    <div class="speedometer">
+        <img src="./assets/images/speedometer.jpg" class="img-fluid" alt="Responsive image">
+    </div>
+    <br>
+    <br>
 
     <!-- Coupon Here  -->
     <button type="button" class="btn btn-outline-success btn-lg btn-block">GET $10 OFF YOUR NEXT OIL CHANGE! CLICK FOR DETAILS. </button>
     <!-- Coupon End -->
+
 
     <div class="container-fluid">
         <div class="row" id="infoPanel">
@@ -120,6 +120,7 @@
             </div>
         </div>
         <!--Coupon-->
+
 
         <!--row-->
         <!-- testimonials -->
@@ -167,9 +168,130 @@
                 if (event.target == modal) {
                     modal.style.display = "none";
                 }
+            }
+        </script>
+
+        <!-- End Navbar -->
+
+
+        <div class="container-fluid text-center">
+            <footer class="footer" style="margin: 20px">
+
+                <a href="https://www.facebook.com/The-Oil-Change-481508488547041/" target="_blank">
+                    <img src="assets/images/facebook.svg" alt="facebook icon" width="40" height="40" hspace="5">
+                </a>
+                <a href="https://www.yelp.com/biz/oil-change-spanish-fork?osq=the+oil+change" target="_blank">
+                    <img src="assets/images/yelp.svg" alt="yelp icon" width="64" height="64" hspace="5">
+                </a>
+                <p class="text-muted">The Oil Change</p>
+            </footer>
+        </div>
+        <!--container-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function () {
+                    /* Toggle between adding and removing the "active" class,
+                    to highlight the button that controls the panel */
+                    this.classList.toggle("active1");
+
+                    /* Toggle between hiding and showing the active panel */
+                    var panel = this.nextElementSibling;
+                    if (panel.style.display === "block") {
+                        panel.style.display = "none";
+                    } else {
+                        panel.style.display = "block";
+                    }
+                });
+            }
+
+            // Get the modal
+            var modal = document.getElementById('id01');
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
 
             }
         </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <style>
+            /* Style the buttons that are used to open and close the accordion panel */
+
+            .accordion {
+                margin-top: 20px;
+                background-color: rgb(255, 255, 255);
+                color: #444;
+                cursor: pointer;
+                padding: 18px;
+                width: 100%;
+                text-align: center;
+                border: none;
+                outline: none;
+                transition: 0.4s;
+                color: #11843D;
+            }
+
+            /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+
+            .accordion:hover {
+                background-color: #11843D;
+                color: white;
+            }
+
+            /* Style the accordion panel. Note: hidden by default */
+
+            .panel {
+                padding: 0 18px;
+                padding-top: 18px;
+                background-color: #11843D;
+                color: white;
+                display: none;
+                overflow: hidden;
+            }
+
+            .accordion:after {
+
+                font-size: 13px;
+                color: #11843D;
+
+                margin-right: 10px;
+            }
+
+            .active1:after {
+
+                color: #11843D;
+            }
+
+            h3 {
+                margin-top: 20px;
+                margin-left: 20px;
+            }
+
+            .coupcenter {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+            }
+        </style>
+
+
 </body>
 
 </html>
