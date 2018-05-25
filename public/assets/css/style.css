@@ -184,3 +184,9 @@ span.psw {
 #list {
     width: 25%;
 }
+.tdprice {
+    text-align: right;
+}
+td {
+    width: 90%;
+}
