@@ -1,6 +1,8 @@
 $(document).ready(function() {
     //DOM SELECTORS
     let $newCustomerName = $("#new-customer-name"),
+        $newCustomerUsername = $("#new-customer-username"),
+        $newCustomerPassword = $("#new-customer-password"),
         $addCustomer = $("#add-customer"),
         $newCarVin = $("#new-car-vin"),
         $newCarMake = $("#new-car-make"),
@@ -143,7 +145,11 @@ $(document).ready(function() {
     //add-customer listener
     $addCustomer.click(function(event){
         event.preventDefault();
-        var newCustomer = {name: $newCustomerName.val().trim()};
+        var newCustomer = {
+            name: $newCustomerName.val().trim(),
+            username: $newCustomerUsername.val().trim(),
+            password: $newCustomerPassword.val().trim()
+        };
         $.post("/api/customer", newCustomer, function(){
             updateCustomers();
         })

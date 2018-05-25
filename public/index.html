@@ -15,15 +15,15 @@
 <body>
 
     <!-- nav bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
         <a class="navbar-brand" href="#">
-            <img src="/public/assets/images/OIl change logo.png" alt="The oil change">
+            <img src="./assets/images/oil_change_logo.jpg" alt="The oil change">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -47,10 +47,11 @@
         </div>
     </nav>
 
-    <img src="/public/assets/images/OIl change logo.jpg" alt="The oil change" style="max-width:100px; margin-top: -7px;">
 
-    <!-- <img src="/public/assets/images/OIl change logo.png" alt="The oil change" style="max-width:100px; margin-top: -7px;"> -->
 
+    
+
+   
 
     <div id="id01" class="modal">
 
@@ -88,6 +89,93 @@
     </div>
     <!--modal-->
 
+
+    <!-- End Navbar -->
+    <!-- top image  -->
+    <div class="speedometer">
+    <img src="./assets/images/speedometer.jpg" class="img-fluid" alt="Responsive image">
+    </div>
+    <br>
+    <br>
+
+    <!-- Coupon Here  -->
+    <button type="button" class="btn btn-outline-success btn-lg btn-block">GET $10 OFF YOUR NEXT OIL CHANGE! CLICK FOR DETAILS. </button>
+    <!-- Coupon End -->
+
+
+    <div class="container-fluid">
+        <div class="row" id="infoPanel">
+            <div class="col-sm-6">
+                <!-- Map container -->
+                <div class="card card-body" id="googleMap">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12204.556881236738!2d-111.6537362!3d40.1169008!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9b1f190ffae11b2a!2sOil+Change!5e0!3m2!1sen!2sus!4v1525033663500"
+                        width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <!--col-->
+            <div class="col-sm-6">
+                <!-- contact info -->
+                <div class="card card-body" id="contactinfo">
+                    <!-- <img src=""> -->
+                    <p>The Oil Change Spanish Fork</p>
+                    <p>Address: 552 N Main St, Spanish Fork, UT 84660</p>
+                    <p>Phone: (801) 798-7877</p>
+                    <p>Hours: M-F 8:00am-6:00pm | Sat 8:00am-4:00pm | Closed Sundays</p>
+
+                </div>
+            </div>
+        </div>
+        <!--Coupon-->
+
+
+        <!--row-->
+        <!-- testimonials -->
+        <h1 class="display-4 text-center">Testimonials</h1>
+        <div class="card">
+            <div class="card-body">
+                <p class="lead text-center">I have never been to a better place for oil and service to my vehicles! Mac and his staff are friendly, courteous,
+                    knowledgeable and willing to take care of you anyway they can. Won’t go anywhere else!
+                    <small class="text-center">
+                        --Grant Coombs</small>
+                </p>
+                <br>
+
+
+
+                <p class="lead text-center">Best customer service! As a female- I didn’t feel like I was being taken advantage of. I felt respected and
+                    taken care of- as was my car!
+                    <small class="text-center"> --Corinne Versluys Hoyt</small>
+                </p>
+
+                <br>
+
+
+                <p class="lead text-center">Mac has always been top notch in caring for our cars! The service was fast and if another service was recommended,
+                    he prioritizes the recommendation, helps recommend where the service can be addressed, and speaks respectfully.
+                    Excellent care and customer service!
+                    <small class="text-muted text-center"> --Jacquie Devereaux Carter</small>
+                </p>
+
+            </div>
+        </div>
+        <!--container-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <script>
+            // Get the modal
+            var modal = document.getElementById('id01');
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
 
     <!-- End Navbar -->
     <!-- top image  -->
@@ -261,6 +349,7 @@
                     }
                     </style>
         
+
 </body>
 
 </html>
