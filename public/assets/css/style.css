@@ -150,13 +150,16 @@ span.psw {
     width: 200px;
   }
   #navbarSupportedContent ul {
-    justify-content: space-between;
+    justify-content: space-evenly;
     min-width: 500px;
     width: 85%;
 }
 .nav-link {
     font-weight: 900;
     font-size: 28px;
+}
+.nav-link:hover, .nav-link:active{
+    text-shadow: 2px 2px 4px #f44336;
 }
 
 
