@@ -283,3 +283,11 @@ h2::after {
 td {
     width: 90%;
 }
+#bottomContainer {
+    margin-top: 20px;
+    padding: 20;
+    background-color: rgb(207, 207, 207);
+}
+.card{
+    border: none;
+}
