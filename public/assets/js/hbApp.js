@@ -51,31 +51,6 @@ $(document).ready(function() {
     }
     //print all cars
     function updateCars(user) {
-        if (user === 'all'){
-        $.get("/api/cars", function(data) {
-            if(data) {
-                carsArray = data
-                console.log(carsArray);
-                $carsDisplay.empty();
-                $newServiceCar.empty();
-                data.map(i => {
-                    $carsDisplay.append(
-                        "<tr>" +
-                            "<td>" + i.id + "</td>" +
-                            "<td>" + i.vin + "</td>" +
-                            "<td>" + i.make + "</td>" +
-                            "<td>" + i.model + "</td>" +
-                            "<td>" + i.year + "</td>" +
-                            "<td>" + i.mileage + "</td>" +
-                            "<td><button class = 'btn btn-primay service-button' id = 'services-" + i.id + "'>Service History</button></td>" +
-                        "</tr>"
-                    );
-                    $newServiceCar.append("<option>" + i.id + "- " + i.vin + "</option>");
-                })
-                
-            }
-        });
-        } else {
             $.get("/api/cars/" + user, function(data) {
                 if(data) {
                     console.log(data);
@@ -96,29 +71,9 @@ $(document).ready(function() {
                 }
             })
         }
-    }
 
     //print all services
     function updateServices(car) {
-        if (car === 'all') {
-        $.get("/api/services", function(data) {
-            if(data) {
-                console.log(data);
-                $servicesDisplay.empty();
-                data.map(i => {
-                    $servicesDisplay.append(
-                        "<tr>" +
-                        "<td>" + i.id + "</td>" +
-                        "<td>" + i.serviceType + "</td>" +
-                        "<td>" + i.date + "</td>" + 
-                        "<td>" + i.mileage + "</td>" +
-                        "<td>" + i.url + "</td>" +
-                        "</tr>"
-                    )
-                });
-            }
-        })
-        } else {
             $.get("/api/services/" + car, function(data) {
                 if(data) {
                     console.log(data);
@@ -135,12 +90,7 @@ $(document).ready(function() {
                 }
             })
         }
-    }
-    //Initialize page
-    updateCustomers();
-    updateCars("all");
-    updateServices("all");
-
+    
     //listeners
     //add-customer listener
     $addCustomer.click(function(event){

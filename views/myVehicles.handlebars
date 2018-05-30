@@ -1,15 +1,27 @@
 <!-- views/myVehicles.handlebars -->
-{{#if user}}
-  <div class="jumbotron">
-    <h1>JawsDB User Authentication</h1>
-    <p>Below is your profile information!</p>
+<!-- Jumbotron-->
+
+<div class="jumbotron jumbotron-fluid text-center">
+    <div class="container-vehicle">
+      <h1 class="display-3">Welcome to your Client Dashboard </h1>
+      <h3 class="lead">Here you can find past service records, recommended upcoming services, and more. </h3>
+      <img src="./assets/images/speedometer.jpg" class="img-fluid" alt="Responsive image">
+    </div>
   </div>
+<!-- End Jumbotron-->
+{{#if user}}
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">Profile Information</h3>
     </div>
     <div class="panel-body">
       <p>Username: {{user.username}}</p>
+      <p>
+        <a href="/logout" class="btn btn-primary btn-lg" role="button">
+        <span class="glyphicon glyphicon-user"></span>
+        Log out
+      </a>
+      </p>
     </div>
     <div class = "panel-body">
       <table class = "table table-bordered">
@@ -34,6 +46,18 @@
           {{/each}}
         </tbody>
       </table>
+    </div><hr>
+    <div class = "panel-body">Click a vehicle to see its service history
+     <table class = "table table-bordered">
+                            <thead>
+                                <th>ID</th>
+                                <th>Service-Type</th>
+                                <th>Date</th>
+                                <th>Mileage</th>
+                                <th>Invoice URL</th>
+                            </thead>
+                            <tbody id = "services-display"></tbody>
+      </table> 
     </div>
   </div>
 

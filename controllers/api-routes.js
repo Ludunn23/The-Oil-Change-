@@ -1,5 +1,7 @@
 //dependencies
 var db = require("../models");
+var bCrypt = require('bcrypt-nodejs');
+
 
 
 //routes
@@ -70,6 +72,12 @@ router.get("/api/services/:CarId", function(req, res) {
 
 //add a new customer
 router.post("/api/customer", function(req, res) {
+    
+    var generateHash = function(password) {
+        return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
+    };
+
+    req.body.password = generateHash(req.body.password);
     db.Customer.create(req.body).then(function(result) {
         res.json(result);
     });

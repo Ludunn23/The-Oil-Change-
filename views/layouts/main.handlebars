@@ -40,25 +40,24 @@
               </nav>
 
               <div id="id01" class="modal">
+                
 
-                  <form class="modal-content animate" action="/action_page.php">
-                      <div class="imgcontainer">
-                          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                          <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
-                      </div>
+                  <form class="modal-content animate" id = "signin" name = "signin" method = "post" action="signin">
+                    <div class="imgcontainer">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    </div>
+                    <p>New user? <span><a href = "/signup">Create an account!</a></span></p>
+                      
           
                       <div class="container">
-                          <label for="uname">
-                              <b>Username</b>
-                          </label>
-                          <input type="text" placeholder="Enter Username" name="uname" required>
-          
-                          <label for="psw">
-                              <b>Password</b>
-                          </label>
-                          <input type="password" placeholder="Enter Password" name="psw" required>
-          
-                          <button type="submit">Login</button>
+                        <label for="username">Username</label>
+                        <input class="text" name="username" type="text" />
+
+                        <label for="password">Password</label>
+                        <input name="password" type="password" />
+
+                        <input class="btn" type="submit" value="Sign In" />
+
                           <label>
                               <input type="checkbox" checked="checked" name="remember"> Remember me
                           </label>
@@ -85,29 +84,6 @@
     }
 </script>
 {{{body}}}
-<!-- Jumbotron-->
-
-{{!-- <div class="jumbotron jumbotron-fluid text-center">
-    <div class="container-vehicle">
-      <h1 class="display-3">Welcome to your Client Dashboard </h1>
-      <h3 class="lead">Here you can find past service records, recommended upcoming services, and more. </h3>
-      <img src="./assets/images/speedometer.jpg" class="img-fluid" alt="Responsive image">
-    </div>
-  </div>
-
-
-<!-- End Jumbotron-->
-
-<!-- List-->
-<div class="list-group" id ="list">
-    <a href="#" class="list-group-item list-group-item-action active list-group-item-success">
-      Client Dashboard
-    </a>
-    <a href="#" class="list-group-item list-group-item-action">Service Record</a>
-    <a href="#" class="list-group-item list-group-item-action">Recommended Services</a>
-    <a href="#" class="list-group-item list-group-item-action">Make an Appointment</a>
-    <a href="#" class="list-group-item list-group-item-action">Settings</a>
-  </div> --}}
   <hr>
   <div class="container-fluid text-center">
         <footer class="footer" style="margin: 20px">
@@ -135,6 +111,6 @@
   crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src = "./assets/js/app.js"></script>
+<script src = "./assets/js/hbApp.js"></script>
 </body>
 </html>
