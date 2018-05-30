@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "asdf1234",
-    "database": "cars_db",
+    "password": "",
+    "database": "",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
