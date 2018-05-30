@@ -54,7 +54,7 @@ require("./config/passport.js")(passport, db.Customer);
 
 
 //listener
-db.sequelize.sync({}).then(function() {
+db.sequelize.sync({force: true}).then(function() {
 app.listen(PORT, function(){
     console.log("App listening on http://localhost:" + PORT);
 });
