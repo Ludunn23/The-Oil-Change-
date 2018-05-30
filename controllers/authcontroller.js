@@ -18,7 +18,7 @@ exports.dashboard = function(req, res) {
     db.Car.findAll({
         where: {Customerid: req.user.id}
     }).then(function(result) {
-        res.render('myvehicles', {
+        res.render('myVehicles', {
             user: req.user,
             cars: result
         });
