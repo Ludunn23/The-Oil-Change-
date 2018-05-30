@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <title>The Oil Change Admin</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="index.html">
+                    <img src="./assets/images/oil_change_logo.jpg" alt="The oil change">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="servicemenu.html">Service Menu</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">FAQ's <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link" href = "myvehicles.html">My Vehicles</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+
+              <div id="id01" class="modal">
+
+                  <form class="modal-content animate" action="/action_page.php">
+                      <div class="imgcontainer">
+                          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                          <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
+                      </div>
+          
+                      <div class="container">
+                          <label for="uname">
+                              <b>Username</b>
+                          </label>
+                          <input type="text" placeholder="Enter Username" name="uname" required>
+          
+                          <label for="psw">
+                              <b>Password</b>
+                          </label>
+                          <input type="password" placeholder="Enter Password" name="psw" required>
+          
+                          <button type="submit">Login</button>
+                          <label>
+                              <input type="checkbox" checked="checked" name="remember"> Remember me
+                          </label>
+                      </div>
+          
+                      <div class="container" style="background-color:#f1f1f1">
+                          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                          <span class="psw">Forgot
+                              <a href="#">password?</a>
+                          </span>
+                      </div>
+                  </form>
+              </div>
+
+              <div class = "container-fluid">
+                  <div class = "card">
+                      <div class = "card-header">
+                        Add a Customer
+                      </div>
+                      <div class = "card-body" id = "add-customer-card">
+                        <form>
+                            <label for = "new-customer-name">Name: </label>
+                            <input type = "text" id = "new-customer-name">
+
+                            <label for = "new-customer-username">Username</label>
+                            <input type = "text" id = "new-customer-username">
+                            
+                            <label for = "new-customer-password">Password</label>
+                            <input type = "password" id = "new-customer-password">
+                            
+                            <button class = "btn btn-primary" id = "add-customer">Submit</button>
+                        </form>
+                      </div>
+                  </div>
+
+                  <div class = "card">
+                    <div class = "card-header">
+                        Add a Car
+                    </div>
+                    <div class = "card-body" id = "add-car-card">
+                        <form>
+                            <label for = "new-car-vin">VIN</label>
+                            <input type = "text" id = "new-car-vin">
+
+                            <label for = "new-car-make">Make</label>
+                            <input type = "text" id = "new-car-make">
+
+                            <label for = "new-car-model">Model</label>
+                            <input type = "text" id = "new-car-model">
+
+                            <label for = "new-car-year">Year</label>
+                            <input type = "number" id = "new-car-year"><br>
+
+                            <label for = "new-car-mileage">Mileage</label>
+                            <input type = "number" id = "new-car-mileage"><br>
+
+                            <label for = "new-car-owner">Owner(id)</label>
+                            <select class = "custom-select" id = "new-car-owner"></select>
+                            <!-- <input type = "number" id = "new-car-owner"> -->
+
+                            <button class = "btn btn-primary" id = "add-car">Submit</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class = "card">
+                    <div class = "card-header">
+                        Add a Service
+                    </div>
+                    <div class = "card-body" id = "add-service-card">
+                        <form>
+                            <label for = "new-service-type">Service Type</label>
+                            <input type = "text" id = "new-service-type">
+
+                            <label for = "new-service-date">Date</label>
+                            <input type = "date" id = "new-service-date"><br>
+
+                            <label for = "new-service-mileage">Mileage</label>
+                            <input type = "number" id = "new-service-mileage"><br>
+
+                            <label for = "new-service-url">Invoice URL</label>
+                            <input type = "url" id = "new-service-url"><br>
+
+                            <label for = "new-service-car">Car(id)</label>
+                            <select class = "custom-select" id = "new-service-car"></select>
+                            <!-- <input type = "number" id = "new-service-car"> -->
+                            
+                            <button class = "btn btn-primary" id = "add-service">Submit</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class = "card">
+                    <div class = "card-header">
+                        Customers
+                    </div>
+                    <div class = "card-body">
+                        <table class = "table table-bordered">
+                            <thead>
+                                <th>Id</th>
+                                <th>Name</th>
+                            </thead>
+                            <tbody id = "customers-display"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class = "card">
+                    <div class = "card-header">
+                        Cars
+                    </div>
+                    <div class = "card-body">
+                        <table class = "table table-bordered">
+                            <thead>
+                                <th>ID</th>
+                                <th>VIN</th>
+                                <th>Make</th>
+                                <th>Model</th>
+                                <th>Year</th>
+                                <th>Mileage</th>
+                            </thead>
+                            <tbody id = "cars-display"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class = "card">
+                    <div class = "card-header">
+                        Services
+                    </div>
+                    <div class = "card-body">
+                        <table class = "table table-bordered">
+                            <thead>
+                                <th>ID</th>
+                                <th>Service-Type</th>
+                                <th>Date</th>
+                                <th>Mileage</th>
+                                <th>Invoice URL</th>
+                            </thead>
+                            <tbody id = "services-display"></tbody>
+                        </table>
+                    </div>
+                </div>
+              </div>
+              <hr>
+              <div class="container-fluid text-center">
+                    <footer class="footer" style="margin: 20px">
+                            
+                            <p class="text-muted">The Oil Change Spanish Fork<br>
+                            Address: 552 N Main St, Spanish Fork, UT 84660<br>
+                            Phone: (801) 798-7877<br>
+                            Hours: M-F 8:00am-6:00pm | Sat 8:00am-4:00pm | Closed Sundays</p>
+                            <a href="https://www.facebook.com/The-Oil-Change-481508488547041/" target="_blank">
+                                <img src="assets/images/facebook.svg" alt="facebook icon" width="40" height="40" hspace="5">
+                            </a>
+                            <a href="https://www.yelp.com/biz/oil-change-spanish-fork?osq=the+oil+change" target="_blank">
+                                <img src="assets/images/yelp.svg" alt="yelp icon" width="64" height="64" hspace="5">
+                            </a>
+                    </footer>
+            </div>
+<script>
+    // Get the modal
+    var modal = document.getElementById('id01');      
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src = "./assets/js/app.js"></script>
+</body>
+</html>

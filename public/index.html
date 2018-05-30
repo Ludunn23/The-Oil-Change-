@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <title>The Oil Change</title>
+
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- nav bar -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
+
+
+
+        <a class="navbar-brand" href="index.html">
+            <img src="./assets/images/oil_change_logo.jpg" alt="The oil change">
+
+
+
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="servicemenu.html">Service Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="faqs.html">FAQ's</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="myvehicles.html">My Vehicles</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!--end of navbar-->
+    <!--begining of modal-->
+
+
+    <div id="id01" class="modal">
+
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
+            </div>
+
+            <div class="container">
+                <label for="uname">
+                    <b>Username</b>
+                </label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                <label for="psw">
+                    <b>Password</b>
+                </label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <button type="submit">Login</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot
+                    <a href="#">password?</a>
+                </span>
+
+            </div>
+        </form>
+    </div>
+    <!--modal-->
+
+
+    <!-- End Navbar -->
+    <!-- top image  -->
+    <div class="speedometer">
+        <!-- <img src="./assets/images/speedometer.jpg" class="img-fluid" alt="Responsive image"> -->
+        <img src="./assets/images/engine.jpeg" class="img-fluid" alt="Responsive image">
+
+    </div>
+    <br>
+    <br>
+
+    <!-- Coupon Here  -->
+
+    <button class="accordion" type="button" class="btn btn-outline-success btn-lg btn-block">GET $10 OFF YOUR NEXT OIL CHANGE! CLICK FOR DETAILS. </button>
+                      <div class="panel">
+                        <p><img src = "assets/images/The Oil Change coupon.png" class="coupcenter"></p>
+                      </div>
+    <!-- Coupon End -->
+
+    <div class="container-fluid">
+        <div class="row" id="infoPanel">
+            <div class="col-sm-6">
+                <!-- Map container -->
+                <div class="card card-body" id="googleMap">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12204.556881236738!2d-111.6537362!3d40.1169008!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9b1f190ffae11b2a!2sOil+Change!5e0!3m2!1sen!2sus!4v1525033663500"
+
+                        width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+                </div>
+            </div>
+            <!--col-->
+            <div class="col-sm-6">
+                <!-- contact info -->
+                <div class="card card-body border-none" id="contactinfo">
+                        <h2>Testimonials</h2>
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            <!-- Carousel indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                            </ol>   
+                            <!-- Wrapper for carousel items -->
+                            <div class="carousel-inner">
+                                <div class="item carousel-item active">
+                                    <div class="img-box"><img src="./assets/images/GCoomes.jpg" alt=""></div>
+                                    <p class="testimonial">I have never been to a better place for oil and service to my vehicles! Mac and his staff are friendly,
+                                        courteous, knowledgeable and willing to take care of you anyway they can. Won’t go anywhere else!</p>
+                                    <p class="overview"><b>Grant Coombs</b></p>
+                                </div>
+                                <div class="item carousel-item">
+                                    <div class="img-box"><img src="./assets/images/choyt.jpg" alt=""></div>
+                                    <p class="testimonial">Best customer service! As a female- I didn’t feel like I was being taken advantage of. I felt respected
+                                        and taken care of- as was my car!</p>
+                                    <p class="overview"><b>Corinne Versluys Hoyt</b></p>
+                                </div>
+                                <div class="item carousel-item">
+                                    <div class="img-box"><img src="./assets/images/jcarter.jpg" alt=""></div>
+                                    <p class="testimonial">Mac has always been top notch in caring for our cars! The service was fast and if another service was
+                                        recommended, he prioritizes the recommendation, helps recommend where the service can be addressed,
+                                        and speaks respectfully. Excellent care and customer service!</p>
+                                    <p class="overview"><b>Jacquie Devereaux Carter</b></p>
+                                </div>
+                            </div>
+                            <!-- Carousel controls -->
+                            <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </div>
+                    <!-- <img src=""> -->
+                    
+
+                </div>
+            </div>
+        </div>
+
+        
+
+<--testimonials-->
+        <div class="container-fluid text-center">
+            <footer class="footer" style="margin: 20px">
+                    
+                    <p class="text-muted">The Oil Change Spanish Fork<br>
+                    Address: 552 N Main St, Spanish Fork, UT 84660<br>
+                    Phone: (801) 798-7877<br>
+                    Hours: M-F 8:00am-6:00pm | Sat 8:00am-4:00pm | Closed Sundays</p>
+                    <a href="https://www.facebook.com/The-Oil-Change-481508488547041/" target="_blank">
+                        <img src="assets/images/facebook.svg" alt="facebook icon" width="40" height="40" hspace="5">
+                    </a>
+                    <a href="https://www.yelp.com/biz/oil-change-spanish-fork?osq=the+oil+change" target="_blank">
+                        <img src="assets/images/yelp.svg" alt="yelp icon" width="64" height="64" hspace="5">
+                    </a>
+            </footer>
+
+        </div>
+        <!--container-->
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+            <script>
+  // Get the modal
+  var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+
+}
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+  
+  for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+          /* Toggle between adding and removing the "active" class,
+          to highlight the button that controls the panel */
+          this.classList.toggle("active1");
+  
+          /* Toggle between hiding and showing the active panel */
+          var panel = this.nextElementSibling;
+          if (panel.style.display === "block") {
+              panel.style.display = "none";
+          } else {
+              panel.style.display = "block";
+          }
+      });
+  }
+  
+</script>
+
+        <style>
+            .accordion {
+                margin-top: 20px;
+                background-color: rgb(255, 255, 255);
+                color: #444;
+                cursor: pointer;
+                padding: 18px;
+                width: 100%;
+                text-align: center;
+                border: none;
+                outline: none;
+                transition: 0.4s;
+                color: #11843D;
+            }
+            /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+            .accordion:hover {
+                background-color: #11843D;
+                color: white;
+            }
+            /* Style the accordion panel. Note: hidden by default */
+            .panel {
+                padding: 0 18px;
+                padding-top: 18px;
+                color: white;
+                display: none;
+                overflow: hidden;
+            }
+            .coupcenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+        </style>
+</body>
+</html>
