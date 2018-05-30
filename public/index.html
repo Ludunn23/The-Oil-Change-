@@ -47,7 +47,7 @@
                     <a class="nav-link" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="myvehicles.html">My Vehicles</a>
+                    <a class="nav-link" href="/dashboard">My Vehicles</a>
                 </li>
             </ul>
         </div>
@@ -60,24 +60,20 @@
 
     <div id="id01" class="modal">
 
-        <form class="modal-content animate" action="/action_page.php">
+        <form class="modal-content animate" id = "signin" name = "signin" method = "post" action="signin">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
             </div>
+            <p>New user? <span><a href = "/signup">Create an account!</a></span></p>
 
             <div class="container">
-                <label for="uname">
-                    <b>Username</b>
-                </label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
+              <label for="username">Username</label>
+              <input class="text" name="username" type="text" />
 
-                <label for="psw">
-                    <b>Password</b>
-                </label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+              <label for="password">Password</label>
+              <input name="password" type="password" />
 
-                <button type="submit">Login</button>
+              <input class="btn" type="submit" value="Sign In" />
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Remember me
                 </label>
@@ -171,11 +167,10 @@
 
                 </div>
             </div>
-        </div>
+        </div><hr>
 
         
 
-<--testimonials-->
         <div class="container-fluid text-center">
             <footer class="footer" style="margin: 20px">
                     
