@@ -41,6 +41,7 @@ $(document).ready(function() {
                         "<tr>" +
                             "<td>" + i.id + "</td>" +
                             "<td>" + i.name + "</td>" +
+                            "<td>" + i.username + "</td>" +
                             "<td><button class = 'btn btn-primary car-button' id = 'cars-" + i.id + "'>See my Cars</button></td>" +
                         "</tr>"
                     );
