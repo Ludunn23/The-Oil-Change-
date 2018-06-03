@@ -1,10 +1,12 @@
 $(document).ready(function() {
     //DOM SELECTORS
-    let $newCustomerName = $("#new-customer-name"),
+    let $customerGo = $("#customer-search-go"),
+        $carGo = $("#car-search-go"),
+        $newCustomerName = $("#new-customer-name"),
         $newCustomerUsername = $("#new-customer-username"),
         $newCustomerPassword = $("#new-customer-password"),
         $addCustomer = $("#add-customer"),
-        $newCarVin = $("#new-car-vin"),
+        $newCarPlate = $("#new-car-plate"),
         $newCarMake = $("#new-car-make"),
         $newCarModel = $("#new-car-model"),
         $newCarYear = $("#new-car-year"),
@@ -28,6 +30,7 @@ $(document).ready(function() {
 
 
     //functions
+    
     //print all customers
     function updateCustomers(){
         $.get("/api/customers", function(data){
@@ -37,15 +40,29 @@ $(document).ready(function() {
                 $customersDisplay.empty();
                 $newCarOwner.empty();
                 data.map(i => {
+                    if(i.isAdmin) {
+                        $customersDisplay.append(
+                            "<tr>" +
+                                "<td>" + i.id + "</td>" +
+                                "<td>" + i.name + "</td>" +
+                                "<td>" + i.username + "</td>" +
+                                "<td><button class = 'btn btn-primary car-button' id = 'cars-" + i.id + "'>See my Cars</button></td>" +
+                                "<td><button class = 'btn btn-danger de-auth-button' id = 'de-authorize-" + i.id + "'>Remove Admin</button></td>" +
+                            "</tr>"
+                        );
+                        $newCarOwner.append("<option>" + i.id + "- "+ i.name + "</option>")
+                    } else {
                     $customersDisplay.append(
                         "<tr>" +
                             "<td>" + i.id + "</td>" +
                             "<td>" + i.name + "</td>" +
                             "<td>" + i.username + "</td>" +
                             "<td><button class = 'btn btn-primary car-button' id = 'cars-" + i.id + "'>See my Cars</button></td>" +
+                            "<td><button class = 'btn btn-success auth-button' id = 'authorize-" + i.id + "'>Make Admin</button></td>" +
                         "</tr>"
                     );
                     $newCarOwner.append("<option>" + i.id + "- "+ i.name + "</option>")
+                }
                 });
             }
         });
@@ -63,7 +80,7 @@ $(document).ready(function() {
                     $carsDisplay.append(
                         "<tr>" +
                             "<td>" + i.id + "</td>" +
-                            "<td>" + i.vin + "</td>" +
+                            "<td>" + i.plate + "</td>" +
                             "<td>" + i.make + "</td>" +
                             "<td>" + i.model + "</td>" +
                             "<td>" + i.year + "</td>" +
@@ -71,7 +88,7 @@ $(document).ready(function() {
                             "<td><button class = 'btn btn-primay service-button' id = 'services-" + i.id + "'>Service History</button></td>" +
                         "</tr>"
                     );
-                    $newServiceCar.append("<option>" + i.id + "- " + i.vin + "</option>");
+                    $newServiceCar.append("<option>" + i.id + "- " + i.plate + "</option>");
                 })
                 
             }
@@ -85,7 +102,7 @@ $(document).ready(function() {
                         $carsDisplay.append(
                         "<tr>" +
                         "<td>" + i.id + "</td>" +
-                        "<td>" + i.vin + "</td>" +
+                        "<td>" + i.plate + "</td>" +
                         "<td>" + i.make + "</td>" +
                         "<td>" + i.model + "</td>" +
                         "<td>" + i.year + "</td>" +
@@ -163,14 +180,14 @@ $(document).ready(function() {
     $addCar.click(function(event){
         event.preventDefault();
         var newCar = {
-            vin: $newCarVin.val().trim(),
+            plate: $newCarPlate.val().trim(),
             make: $newCarMake.val().trim(),
             model: $newCarModel.val().trim(),
             year: $newCarYear.val().trim(),
             mileage: $newCarMileage.val().trim(),
             CustomerId: $newCarOwner.val().slice(0, $newCarOwner.val().indexOf("-"))
         };
-        $newCarVin.val("");
+        $newCarPlate.val("");
         $newCarMake.val("");
         $newCarModel.val("");
         $newCarYear.val("");
@@ -211,5 +228,45 @@ $(document).ready(function() {
         var target = event.currentTarget.id.substr(9);
         console.log(target);
         updateServices(target);
+    });
+
+    //make a user an admin
+    $(document).on("click", ".auth-button", function(event){
+        var target = event.currentTarget.id.substr(10);
+        $.get("/api/idcustomer/" + target, function(data){
+            data.isAdmin = true;
+            $.ajax({
+                method: "PUT",
+                url: "/api/customer/" + target,
+                data: data
+            }).then(function(){
+                updateCustomers();
+            })
+        })
+    });
+
+    //revoke admin privileges
+    $(document).on("click", ".de-auth-button", function(event){
+        var target = event.currentTarget.id.substr(13);
+        $.get("/api/idcustomer/" + target, function(data){
+            data.isAdmin = false;
+            $.ajax({
+                method: "PUT",
+                url: "/api/customer/" + target,
+                data: data
+            }).then(function(){
+                updateCustomers();
+            })
+        })
+    });
+
+    //customer search listener
+    $customerGo.click(function(event) {
+
+    });
+
+    //car search listener
+    $carGo.click(function(event) {
+
     });
 });

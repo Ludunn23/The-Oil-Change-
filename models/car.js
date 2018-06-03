@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
     var Car = sequelize.define("Car", {
-        vin: {
+        plate: {
             type: DataTypes.STRING,
             allowNull: false
         },

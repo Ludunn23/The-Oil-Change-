@@ -97,4 +97,57 @@ router.post("/api/service", function(req, res) {
     });
 });
 
+//Update a customer
+router.put("/api/customer/:id", function(req, res) {
+    db.Customer.update(
+        req.body,
+        {where: {
+            id: req.params.id
+        }
+    }).then(function(result){
+        res.json(result);
+    })
+});
+
+//find a customer by name or username
+router.get("/api/customer/:search", function(req, res){
+    db.Customer.findAll({
+        where: {
+            name: req.params.search
+        }
+    }).then(function(result){
+        if(result){
+            res.json(result)
+        } else {
+            db.Customer.findAll({
+                where: {
+                    username: req.params.search
+                }
+            }).then(function(result2){
+                res.json(result2);
+            })
+        }
+    })
+});
+
+//find a customer by id
+router.get("/api/idcustomer/:id", function(req, res){
+    db.Customer.findOne({
+        where: {id: req.params.id}
+    }).then(function(result) {
+        res.json(result);
+    });
+});
+
+//find a car
+router.get("api/car/:search", function(req, res) {
+    db.Car.findAll({
+        where:{
+            plate: req.params.plate
+        }
+    }).then(function(result){
+        req.json(result);
+    })
+})
+
 module.exports = router;
