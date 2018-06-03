@@ -41,7 +41,7 @@
 
               <div id="id01" class="modal">
 
-                  <form class="modal-content animate" action="/action_page.php">
+                  <form class="modal-content animate" id = "signin" name = "signin" method = "post" action="signin">
                     <div class="imgcontainer">
                         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                     </div>
@@ -58,7 +58,7 @@
                           </label>
                           <input type="password" placeholder="Enter Password" name="psw" required>
           
-                          <button type="submit">Login</button>
+                          <input class="btn" type="submit" value="Sign In" />
                           <label>
                               <input type="checkbox" checked="checked" name="remember"> Remember me
                           </label>
@@ -71,85 +71,49 @@
                           </span>
                       </div>
                   </form>
-              </div>
+              </div><hr>
 
               <div class = "container-fluid">
-                  <div class = "card">
-                      <div class = "card-header">
-                        Add a Customer
-                      </div>
-                      <div class = "card-body" id = "add-customer-card">
-                        <form>
-                            <label for = "new-customer-name">Name: </label>
-                            <input type = "text" id = "new-customer-name">
-
-                            <label for = "new-customer-username">Username</label>
-                            <input type = "text" id = "new-customer-username">
-                            
-                            <label for = "new-customer-password">Password</label>
-                            <input type = "password" id = "new-customer-password">
-                            
-                            <button class = "btn btn-primary" id = "add-customer">Submit</button>
-                        </form>
-                      </div>
-                  </div>
-
-                  <div class = "card">
-                    <div class = "card-header">
-                        Add a Car
-                    </div>
-                    <div class = "card-body" id = "add-car-card">
-                        <form>
-                            <label for = "new-car-vin">VIN</label>
-                            <input type = "text" id = "new-car-vin">
-
-                            <label for = "new-car-make">Make</label>
-                            <input type = "text" id = "new-car-make">
-
-                            <label for = "new-car-model">Model</label>
-                            <input type = "text" id = "new-car-model">
-
-                            <label for = "new-car-year">Year</label>
-                            <input type = "number" id = "new-car-year"><br>
-
-                            <label for = "new-car-mileage">Mileage</label>
-                            <input type = "number" id = "new-car-mileage"><br>
-
-                            <label for = "new-car-owner">Owner(id)</label>
-                            <select class = "custom-select" id = "new-car-owner"></select>
-                            <!-- <input type = "number" id = "new-car-owner"> -->
-
-                            <button class = "btn btn-primary" id = "add-car">Submit</button>
-                        </form>
-                    </div>
-                </div>
 
                 <div class = "card">
                     <div class = "card-header">
-                        Add a Service
+                        Find a Customer
                     </div>
-                    <div class = "card-body" id = "add-service-card">
-                        <form>
-                            <label for = "new-service-type">Service Type</label>
-                            <input type = "text" id = "new-service-type">
-
-                            <label for = "new-service-date">Date</label>
-                            <input type = "date" id = "new-service-date"><br>
-
-                            <label for = "new-service-mileage">Mileage</label>
-                            <input type = "number" id = "new-service-mileage"><br>
-
-                            <label for = "new-service-url">Invoice URL</label>
-                            <input type = "url" id = "new-service-url"><br>
-
-                            <label for = "new-service-car">Car(id)</label>
-                            <select class = "custom-select" id = "new-service-car"></select>
-                            <!-- <input type = "number" id = "new-service-car"> -->
-                            
-                            <button class = "btn btn-primary" id = "add-service">Submit</button>
+                    <div class = "card-body" id = "customer-search-card">
+                        <form id = "customer-search-form">
+                            <div class="input-group mb-3">
+                                    <input id = "customer-search" type="text" class="form-control" placeholder="Name or Username">
+                                    <div class="input-group-append">
+                                      <button id = "customer-search-go" class="btn btn-primary" type="button">Search</button>
+                                    </div>
+                            </div>
+                            <div class = "row">
+                                <div class = "col-6">
+                                    <button class = "btn btn-success" id = "all-customers">See all Customers</button> 
+                                </div>
+                                <div class = "col-6">
+                                        <button class = "btn btn-secondary" id = "all-cars">See all Admins</button>
+                                </div>
+                            </div>
                         </form>
                     </div>
-                </div>
+                </div><br>
+
+                <div class = "card">
+                    <div class = "card-header">
+                        Find a Car
+                    </div>
+                    <div class = "card-body" id = "car-search-card">
+                        <form id = "car-search-form">
+                            <div class="input-group mb-3">
+                                    <input id = "car-search" type="text" class="form-control" placeholder="Plate #">
+                                    <div class="input-group-append">
+                                      <button id = "car-search-go" class="btn btn-primary" type="button">Search</button>
+                                    </div>
+                            </div>
+                        </form>
+                    </div>
+                </div><br>
 
                 <div class = "card">
                     <div class = "card-header">
@@ -158,14 +122,14 @@
                     <div class = "card-body">
                         <table class = "table table-bordered">
                             <thead>
-                                <th>Id</th>
+                                <th class = "table-id">ID</th>
                                 <th>Name</th>
                                 <th>Username</th>
                             </thead>
                             <tbody id = "customers-display"></tbody>
                         </table>
                     </div>
-                </div>
+                </div><br>
 
                 <div class = "card">
                     <div class = "card-header">
@@ -174,8 +138,8 @@
                     <div class = "card-body">
                         <table class = "table table-bordered">
                             <thead>
-                                <th>ID</th>
-                                <th>VIN</th>
+                                <th class = "table-id">ID</th>
+                                <th>Plate #</th>
                                 <th>Make</th>
                                 <th>Model</th>
                                 <th>Year</th>
@@ -184,7 +148,7 @@
                             <tbody id = "cars-display"></tbody>
                         </table>
                     </div>
-                </div>
+                </div><br>
 
                 <div class = "card">
                     <div class = "card-header">
@@ -193,7 +157,7 @@
                     <div class = "card-body">
                         <table class = "table table-bordered">
                             <thead>
-                                <th>ID</th>
+                                <th class = "table-id">ID</th>
                                 <th>Service-Type</th>
                                 <th>Date</th>
                                 <th>Mileage</th>
@@ -204,6 +168,88 @@
                     </div>
                 </div>
               </div>
+            
+            <div id = "add-customer-modal" class = "modal">
+              <div class = "card">
+                    <div class = "card-header">
+                      Add a Customer
+                    </div>
+                    <div class = "card-body" id = "add-customer-card">
+                      <form>
+                          <label for = "new-customer-name">Name: </label>
+                          <input type = "text" id = "new-customer-name">
+
+                          <label for = "new-customer-username">Username</label>
+                          <input type = "text" id = "new-customer-username">
+                          
+                          <label for = "new-customer-password">Password</label>
+                          <input type = "password" id = "new-customer-password">
+                          
+                          <button class = "btn btn-primary" id = "add-customer">Submit</button>
+                      </form>
+                    </div><!--Card-body-->
+                    </div><!--Card-->
+                </div><!--modal--><br>
+
+                <div id = "add-car-modal" class = "modal">
+                <div class = "card">
+                  <div class = "card-header">
+                      Add a Car
+                  </div>
+                  <div class = "card-body" id = "add-car-card">
+                      <form>
+                          <label for = "new-car-plate">License Plate #</label>
+                          <input type = "text" id = "new-car-plate">
+
+                          <label for = "new-car-make">Make</label>
+                          <input type = "text" id = "new-car-make">
+
+                          <label for = "new-car-model">Model</label>
+                          <input type = "text" id = "new-car-model">
+
+                          <label for = "new-car-year">Year</label>
+                          <input type = "number" id = "new-car-year"><br>
+
+                          <label for = "new-car-mileage">Mileage</label>
+                          <input type = "number" id = "new-car-mileage"><br>
+
+                          <label for = "new-car-owner">Owner(id)</label>
+                          <select class = "custom-select" id = "new-car-owner"></select>
+
+                          <button class = "btn btn-primary" id = "add-car">Submit</button>
+                      </form>
+                  </div><!--Card Body-->
+                  </div><!--Card-->
+              </div><!--Modal--><br>
+
+              <div id = "add-service-modal" class = "modal">
+              <div class = "card">
+                  <div class = "card-header">
+                      Add a Service
+                  </div>
+                  <div class = "card-body" id = "add-service-card">
+                      <form>
+                          <label for = "new-service-type">Service Type</label>
+                          <input type = "text" id = "new-service-type">
+
+                          <label for = "new-service-date">Date</label>
+                          <input type = "date" id = "new-service-date"><br>
+
+                          <label for = "new-service-mileage">Mileage</label>
+                          <input type = "number" id = "new-service-mileage"><br>
+
+                          <label for = "new-service-url">Invoice URL</label>
+                          <input type = "url" id = "new-service-url"><br>
+
+                          <label for = "new-service-car">Car(id)</label>
+                          <select class = "custom-select" id = "new-service-car"></select>
+                          
+                          <button class = "btn btn-primary" id = "add-service">Submit</button>
+                      </form>
+                  </div><!--Card Body-->
+                  </div><!--Card-->
+              </div><!--Modal--><br>
+
               <hr>
               <div class="container-fluid text-center">
                     <footer class="footer" style="margin: 20px">
