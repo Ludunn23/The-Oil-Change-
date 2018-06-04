@@ -1,6 +1,7 @@
 //dependencies
 var db = require("../models");
 
+
 //routes
 var router = require('express').Router();
 
