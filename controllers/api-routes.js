@@ -137,7 +137,8 @@ router.get("/api/customer/:search", function(req, res){
             name: req.params.search
         }
     }).then(function(result){
-        if(result){
+        console.log(result);
+        if(result[0]){
             res.json(result)
         } else {
             db.Customer.findAll({
