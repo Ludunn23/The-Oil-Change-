@@ -1,13 +1,16 @@
 body {font-family: 'Roboto', Arial, Helvetica, sans-serif;}
 
 /* Full-width input fields */
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type = number], input[type = date] {
     width: 100%;
     padding: 12px 20px;
     /* margin: 8px 0; */
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+}
+.secret-input {
+    visibility: hidden;
 }
 
 /* Set a style for all buttons */
@@ -71,7 +74,7 @@ span.psw {
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 5; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%; /* Full width */

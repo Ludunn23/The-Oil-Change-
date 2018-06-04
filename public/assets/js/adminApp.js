@@ -1,7 +1,12 @@
 $(document).ready(function() {
     //DOM SELECTORS
-    let $customerGo = $("#customer-search-go"),
+    let $customerSearch = $("#customer-search"),
+        $customerGo = $("#customer-search-go"),
+        $allCustomers = $("#all-customers"),
+        $allAdmins = $("#all-admins"),
+        $carSearch = $("#car-search"),
         $carGo = $("#car-search-go"),
+        $newCustomer = $("#new-customer"),
         $newCustomerName = $("#new-customer-name"),
         $newCustomerUsername = $("#new-customer-username"),
         $newCustomerPassword = $("#new-customer-password"),
@@ -12,16 +17,24 @@ $(document).ready(function() {
         $newCarYear = $("#new-car-year"),
         $newCarMileage = $("#new-car-mileage"),
         $newCarOwner = $("#new-car-owner"),
+        $newCarOwnerID = $("#new-car-owner-id"),
         $addCar = $("#add-car"),
         $newServiceType = $("#new-service-type"),
         $newServiceDate = $("#new-service-date"),
         $newServiceMileage = $("#new-service-mileage"),
         $newServiceUrl = $("#new-service-url"),
         $newServiceCar = $("#new-service-car"),
+        $newServiceCarID = $("#new-service-car-id"),
         $addService = $("#add-service"),
         $customersDisplay = $("#customers-display"),
         $carsDisplay = $("#cars-display"),
-        $servicesDisplay = $("#services-display");
+        $servicesDisplay = $("#services-display"),
+        $customerModal = $("#add-customer-modal"),
+        $customerClose = $("#customer-modal-close"),
+        $carModal = $("#add-car-modal"),
+        $carClose = $("#car-modal-close")
+        $serviceModal = $("#add-service-modal"),
+        $serviceClose = $("#service-modal-close");
 
     //Page variables
     var customersArray = [],
@@ -30,7 +43,37 @@ $(document).ready(function() {
 
 
     //functions
-    
+
+    //show a customer
+    function showCustomer(customer) {
+        if(customer.isAdmin) {
+            $customersDisplay.append(
+                    "<tr>" +
+                        "<td>" + customer.id + "</td>" +
+                        "<td>" + customer.name + "</td>" +
+                        "<td>" + customer.username + "</td>" +
+                        "<td><button class = 'btn btn-primary car-button' id = 'cars-" + customer.id + "'>See my Cars</button></td>" +
+                        "<td><button class = 'btn btn-danger de-auth-button' id = 'de-authorize-" + customer.id + "'>Remove Admin</button></td>" +
+                        "<td><button class = 'btn btn-warning add-car-button' id = 'add-car-" + customer.id + "'>New car for User</button></td>" +
+                    "</tr>"
+                );
+                $newCarOwner.empty();
+                $newCarOwner.append("<option>" + customer.id + "- "+ customer.name + "</option>")
+            } else {
+            $customersDisplay.append(
+                "<tr>" +
+                    "<td>" + customer.id + "</td>" +
+                    "<td>" + customer.name + "</td>" +
+                    "<td>" + customer.username + "</td>" +
+                    "<td><button class = 'btn btn-primary car-button' id = 'cars-" + customer.id + "'>See my Cars</button></td>" +
+                    "<td><button class = 'btn btn-success auth-button' id = 'authorize-" + customer.id + "'>Make Admin</button></td>" +
+                    "<td><button class = 'btn btn-warning add-car-button' id = 'add-car-" + customer.id + "'>New car for User</button></td>" +
+                "</tr>"
+            );
+            $newCarOwner.empty();
+            $newCarOwner.append("<option>" + customer.id + "- "+ customer.name + "</option>")
+        }
+    }
     //print all customers
     function updateCustomers(){
         $.get("/api/customers", function(data){
@@ -40,32 +83,26 @@ $(document).ready(function() {
                 $customersDisplay.empty();
                 $newCarOwner.empty();
                 data.map(i => {
-                    if(i.isAdmin) {
-                        $customersDisplay.append(
-                            "<tr>" +
-                                "<td>" + i.id + "</td>" +
-                                "<td>" + i.name + "</td>" +
-                                "<td>" + i.username + "</td>" +
-                                "<td><button class = 'btn btn-primary car-button' id = 'cars-" + i.id + "'>See my Cars</button></td>" +
-                                "<td><button class = 'btn btn-danger de-auth-button' id = 'de-authorize-" + i.id + "'>Remove Admin</button></td>" +
-                            "</tr>"
-                        );
-                        $newCarOwner.append("<option>" + i.id + "- "+ i.name + "</option>")
-                    } else {
-                    $customersDisplay.append(
-                        "<tr>" +
-                            "<td>" + i.id + "</td>" +
-                            "<td>" + i.name + "</td>" +
-                            "<td>" + i.username + "</td>" +
-                            "<td><button class = 'btn btn-primary car-button' id = 'cars-" + i.id + "'>See my Cars</button></td>" +
-                            "<td><button class = 'btn btn-success auth-button' id = 'authorize-" + i.id + "'>Make Admin</button></td>" +
-                        "</tr>"
-                    );
-                    $newCarOwner.append("<option>" + i.id + "- "+ i.name + "</option>")
-                }
+                    showCustomer(i);
                 });
             }
         });
+    };
+    //show a car
+    function showCar(car) {
+        $carsDisplay.append(
+            "<tr>" +
+                "<td>" + car.id + "</td>" +
+                "<td>" + car.plate + "</td>" +
+                "<td>" + car.make + "</td>" +
+                "<td>" + car.model + "</td>" +
+                "<td>" + car.year + "</td>" +
+                "<td>" + car.mileage + "</td>" +
+                "<td><button class = 'btn btn-primay service-button' id = 'services-" + car.id + "'>Service History</button></td>" +
+                "<td><button class = 'btn btn-warning add-service-button' id = 'add-service-" + car.id + "'>Add a Service</button></td>" +
+            "</tr>"
+        );
+        $newServiceCar.append("<option>" + car.id + "- " + car.plate + "</option>");
     }
     //print all cars
     function updateCars(user) {
@@ -77,18 +114,7 @@ $(document).ready(function() {
                 $carsDisplay.empty();
                 $newServiceCar.empty();
                 data.map(i => {
-                    $carsDisplay.append(
-                        "<tr>" +
-                            "<td>" + i.id + "</td>" +
-                            "<td>" + i.plate + "</td>" +
-                            "<td>" + i.make + "</td>" +
-                            "<td>" + i.model + "</td>" +
-                            "<td>" + i.year + "</td>" +
-                            "<td>" + i.mileage + "</td>" +
-                            "<td><button class = 'btn btn-primay service-button' id = 'services-" + i.id + "'>Service History</button></td>" +
-                        "</tr>"
-                    );
-                    $newServiceCar.append("<option>" + i.id + "- " + i.plate + "</option>");
+                    showCar(i);
                 })
                 
             }
@@ -98,18 +124,9 @@ $(document).ready(function() {
                 if(data) {
                     console.log(data);
                     $carsDisplay.empty();
+                    $newServiceCar.empty();
                     data.map(i => {
-                        $carsDisplay.append(
-                        "<tr>" +
-                        "<td>" + i.id + "</td>" +
-                        "<td>" + i.plate + "</td>" +
-                        "<td>" + i.make + "</td>" +
-                        "<td>" + i.model + "</td>" +
-                        "<td>" + i.year + "</td>" +
-                        "<td>" + i.mileage + "</td>" +
-                        "<td><button class = 'btn btn-primay service-button' id = 'services-" + i.id + "'>Service History</button></td>" +
-                    "</tr>"
-                    )
+                        showCar(i);
                     });
                 }
             })
@@ -155,11 +172,36 @@ $(document).ready(function() {
         }
     }
     //Initialize page
-    updateCustomers();
-    updateCars("all");
-    updateServices("all");
+    // updateCustomers();
+    // updateCars("all");
+    // updateServices("all");
 
     //listeners
+
+    //see all customers
+    $allCustomers.click(function(event){
+        event.preventDefault();
+        updateCustomers();
+    })
+    //see all admins
+    $allAdmins.click(function(event){
+        event.preventDefault();
+        $customersDisplay.empty();
+        $.get("/api/admins", function(data){
+            data.map(i => showCustomer(i));
+        })
+    })
+
+    //display the add-customer form
+    $newCustomer.click(function(event) {
+        event.preventDefault();
+        $customerModal.css({"display": "block"});
+    })
+    //hide the add-customer form
+    $customerClose.click(function(event){
+        event.preventDefault();
+        $customerModal.css({"display": "none"});
+    });
     //add-customer listener
     $addCustomer.click(function(event){
         event.preventDefault();
@@ -171,11 +213,30 @@ $(document).ready(function() {
         $newCustomerName.val("");
         $newCustomerUsername.val("");
         $newCustomerPassword.val("");
-        $.post("/api/customer", newCustomer, function(){
-            updateCustomers();
+        $.post("/api/customer", newCustomer, function(result){
+            $customersDisplay.empty();
+            showCustomer(result);
+            $customerModal.css({"display": "none"});
         })
     });
 
+    //display the add-car form
+    $(document).on("click", ".add-car-button", function(event){
+        event.preventDefault();
+        var target = event.currentTarget.id.substr(8);
+        $carModal.css({"display": "block"});
+        $.get("/api/idcustomer/" + target, function(data){
+            var id = data.id;
+            var owner = data.name;
+            $newCarOwner.val(owner);
+            $newCarOwnerID.val(id);
+        })
+    });
+    //hide the add-car form
+    $carClose.click(function(event){
+        event.preventDefault();
+        $carModal.css({"display": "none"});
+    });
     //add-car listener
     $addCar.click(function(event){
         event.preventDefault();
@@ -185,7 +246,7 @@ $(document).ready(function() {
             model: $newCarModel.val().trim(),
             year: $newCarYear.val().trim(),
             mileage: $newCarMileage.val().trim(),
-            CustomerId: $newCarOwner.val().slice(0, $newCarOwner.val().indexOf("-"))
+            CustomerId: $newCarOwnerID.val()
         };
         $newCarPlate.val("");
         $newCarMake.val("");
@@ -194,18 +255,39 @@ $(document).ready(function() {
         $newCarMileage.val("");
         $.post("/api/car", newCar, function() {
             updateCars(newCar.CustomerId);
+            $carModal.css({"display": "none"});
         })
     });
 
+    //display the add-service form
+    $(document).on("click", ".add-service-button", function(event){
+        event.preventDefault();
+        var target = event.currentTarget.id.substr(12);
+        var today = new Date();
+        var todayFormatted = moment(today).format("YYYY-MM-DD");
+        $serviceModal.css({"display": "block"});
+        $.get("/api/idcar/" + target, function(data) {
+            var id = data.id
+            var car = data.plate;
+            $newServiceCar.val(car);
+            $newServiceDate.val(todayFormatted);
+            $newServiceCarID.val(id);
+        });
+    });
+    //hide the add-service form
+    $serviceClose.click(function(event){
+        event.preventDefault();
+        $serviceModal.css({"display": "none"});
+    });
     //add-service listener
     $addService.click(function(event){
         event.preventDefault();
         var newService = {
-            serviceType: $newServiceType.val().trim(),
+            serviceType: $newServiceType.val(),
             date: $newServiceDate.val().trim(),
             mileage: $newServiceMileage.val().trim(),
-            url: $newServiceUrl.val().trim(),
-            CarId: $newServiceCar.val().slice(0, $newServiceCar.val().indexOf("-"))
+            url: "url",
+            CarId: $newServiceCarID.val()
         };
         $newServiceType.val("");
         $newServiceDate.val("");
@@ -213,6 +295,17 @@ $(document).ready(function() {
         $newServiceUrl.val("");
         $.post("/api/service", newService, function() {
             updateServices(newService.CarId);
+            $serviceModal.css({"display": "none"});
+            $.get("/api/idcar/" + newService.CarId, function(data){
+                data.mileage = newService.mileage;
+                $.ajax({
+                    method: "PUT",
+                    url: "/api/car/" + data.id,
+                    data: data
+                }).then(function(){
+                    updateCars(data.CustomerId);
+                })
+            })
         })
     });
 
@@ -262,11 +355,26 @@ $(document).ready(function() {
 
     //customer search listener
     $customerGo.click(function(event) {
-
+        event.preventDefault();
+        var search = $customerSearch.val().trim();
+        $customersDisplay.empty();
+        $.get("/api/customer/" + search, function(data){
+            data.map(i => {
+                showCustomer(i);
+            })
+        })
     });
 
     //car search listener
     $carGo.click(function(event) {
-
-    });
+        event.preventDefault();
+        var search = $carSearch.val().trim();
+        $carsDisplay.empty();
+        $.get("/api/car/" + search, function(data) {
+            console.log(data);
+            data.map(i => {
+                showCar(i);
+            })
+        })
+    }); 
 });

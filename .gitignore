@@ -61,4 +61,4 @@ typings/
 .DS_Store
 
 #local configuration
-config.json
+config/config.json
