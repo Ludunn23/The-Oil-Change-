@@ -14,6 +14,15 @@ router.get("/api/customers", function(req, res) {
     });
 });
 
+//get all customers with admin privileges
+router.get("/api/admins", function(req, res) {
+    db.Customer.findAll({
+        where: {isAdmin: true}
+    }).then(function(result) {
+        res.json(result);
+    })
+})
+
 //get all vehicles
 router.get("/api/cars/", function(req, res) {
     var query = {};
@@ -109,6 +118,18 @@ router.put("/api/customer/:id", function(req, res) {
     })
 });
 
+//Update a car
+router.put("/api/car/:id", function(req, res) {
+    db.Car.update(
+        req.body,
+        {where: {
+            id: req.params.id
+        }}
+    ).then(function(result){
+        res.json(result);
+    })
+})
+
 //find a customer by name or username
 router.get("/api/customer/:search", function(req, res){
     db.Customer.findAll({
@@ -139,14 +160,25 @@ router.get("/api/idcustomer/:id", function(req, res){
     });
 });
 
-//find a car
-router.get("api/car/:search", function(req, res) {
+//find a car by plate
+router.get("/api/car/:search", function(req, res) {
     db.Car.findAll({
         where:{
-            plate: req.params.plate
+            plate: req.params.search
         }
     }).then(function(result){
-        req.json(result);
+        res.json(result);
+    })
+});
+
+//find a car by id
+router.get("/api/idcar/:id", function(req, res){
+    db.Car.findOne({
+        where: {
+            id: req.params.id
+        }
+    }).then(function(result){
+        res.json(result);
     })
 })
 

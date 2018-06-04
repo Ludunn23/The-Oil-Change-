@@ -84,15 +84,18 @@
                             <div class="input-group mb-3">
                                     <input id = "customer-search" type="text" class="form-control" placeholder="Name or Username">
                                     <div class="input-group-append">
-                                      <button id = "customer-search-go" class="btn btn-primary" type="button">Search</button>
+                                      <button id = "customer-search-go" class="btn btn-primary" type="submit">Search</button>
                                     </div>
                             </div>
                             <div class = "row">
-                                <div class = "col-6">
+                                <div class = "col-4">
                                     <button class = "btn btn-success" id = "all-customers">See all Customers</button> 
                                 </div>
-                                <div class = "col-6">
-                                        <button class = "btn btn-secondary" id = "all-cars">See all Admins</button>
+                                <div class = "col-4">
+                                        <button class = "btn btn-secondary" id = "all-admins">See all Admins</button>
+                                </div>
+                                <div class = "col-4">
+                                    <button class = "btn btn-warning" id = "new-customer">Add a new Customer</button>
                                 </div>
                             </div>
                         </form>
@@ -108,7 +111,7 @@
                             <div class="input-group mb-3">
                                     <input id = "car-search" type="text" class="form-control" placeholder="Plate #">
                                     <div class="input-group-append">
-                                      <button id = "car-search-go" class="btn btn-primary" type="button">Search</button>
+                                      <button id = "car-search-go" class="btn btn-primary" type="submit">Search</button>
                                     </div>
                             </div>
                         </form>
@@ -167,12 +170,15 @@
                         </table>
                     </div>
                 </div>
-              </div>
+              </div><!--container-->
             
             <div id = "add-customer-modal" class = "modal">
-              <div class = "card">
+              <div class = "card modal-content animate">
                     <div class = "card-header">
                       Add a Customer
+                        
+                        <span onclick="document.getElementById('add-customer-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        
                     </div>
                     <div class = "card-body" id = "add-customer-card">
                       <form>
@@ -184,20 +190,29 @@
                           
                           <label for = "new-customer-password">Password</label>
                           <input type = "password" id = "new-customer-password">
+                          <div class = "row">
+                              <div class = "col-6">
+                                <button class = "btn btn-primary" id = "add-customer">Submit</button>
+                              </div>
+                              <div class = "col-6">
+                                <button class = "btn btn-danger" id = "customer-modal-close">Cancel</button>
+                              </div>
+                          </div>
                           
-                          <button class = "btn btn-primary" id = "add-customer">Submit</button>
                       </form>
                     </div><!--Card-body-->
                     </div><!--Card-->
                 </div><!--modal--><br>
 
                 <div id = "add-car-modal" class = "modal">
-                <div class = "card">
+                <div class = "card modal-content animate">
                   <div class = "card-header">
                       Add a Car
+                      <span onclick="document.getElementById('add-car-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
                   </div>
                   <div class = "card-body" id = "add-car-card">
                       <form>
+                          New car for <span><input type = "text" id = "new-car-owner" disabled></span>
                           <label for = "new-car-plate">License Plate #</label>
                           <input type = "text" id = "new-car-plate">
 
@@ -212,40 +227,66 @@
 
                           <label for = "new-car-mileage">Mileage</label>
                           <input type = "number" id = "new-car-mileage"><br>
+                          <input type = "number" class = "secret-input" id = "new-car-owner-id">
 
-                          <label for = "new-car-owner">Owner(id)</label>
-                          <select class = "custom-select" id = "new-car-owner"></select>
-
-                          <button class = "btn btn-primary" id = "add-car">Submit</button>
+                          <div class = "row">
+                                <div class = "col-6">
+                                  <button class = "btn btn-primary" id = "add-car">Submit</button>
+                                </div>
+                                <div class = "col-6">
+                                  <button class = "btn btn-danger" id = "car-modal-close">Cancel</button>
+                                </div>
+                            </div>
                       </form>
                   </div><!--Card Body-->
                   </div><!--Card-->
               </div><!--Modal--><br>
 
               <div id = "add-service-modal" class = "modal">
-              <div class = "card">
+              <div class = "card modal-content animate">
                   <div class = "card-header">
                       Add a Service
+                      <span onclick="document.getElementById('add-service-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
                   </div>
                   <div class = "card-body" id = "add-service-card">
                       <form>
+                          <p>New service for <span><input type = "text" id = "new-service-car" disabled></span></p>
                           <label for = "new-service-type">Service Type</label>
-                          <input type = "text" id = "new-service-type">
+                          <select class = "custom-select" id = "new-service-type">
+                              <option>Quaker State&#174 Peak Performance<span class = "trademark"><sup>TM</sup></span> Service</option>
+                              <option>Quaker State&#174 4x4's, Trucks, and SUV Service</option>
+                              <option>Quaker State&#174 Full Synthetic Service</option>
+                              <option>Full Service Ford Powerstroke</option>
+                              <option>Full Service Dodge Cummins</option>
+                              <option>Full Service Chevrolet Duramax</option>
+                              <option>-------------------------------------</option>
+                              <option>Wiper Blades</option>
+                              <option>Differential Gearbox Service</option>
+                              <option>Quaker State&#174 Automatic Transmission Service</option>
+                              <option>Coolant Exchange Service</option>
+                              <option>Gumout&#174 Fuel System Cleaning</option>
+                              <option>Gumout&#174 Engine Flush Service</option>
+                          </select>
 
                           <label for = "new-service-date">Date</label>
                           <input type = "date" id = "new-service-date"><br>
 
                           <label for = "new-service-mileage">Mileage</label>
                           <input type = "number" id = "new-service-mileage"><br>
+                          <input type = 'number' class = 'secret-input' id = 'new-service-car-id'>
 
-                          <label for = "new-service-url">Invoice URL</label>
-                          <input type = "url" id = "new-service-url"><br>
+                          <!-- <label for = "new-service-url">Invoice URL</label>
+                          <input type = "url" id = "new-service-url"><br> -->
 
-                          <label for = "new-service-car">Car(id)</label>
-                          <select class = "custom-select" id = "new-service-car"></select>
-                          
-                          <button class = "btn btn-primary" id = "add-service">Submit</button>
-                      </form>
+                            <div class = "row">
+                                <div class = "col-6">
+                                  <button class = "btn btn-primary" id = "add-service">Submit</button>
+                                </div>
+                                <div class = "col-6">
+                                  <button class = "btn btn-danger" id = "service-modal-close">Cancel</button>
+                                </div>
+                            </div>
+                        </form>
                   </div><!--Card Body-->
                   </div><!--Card-->
               </div><!--Modal--><br>
@@ -279,6 +320,7 @@
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src = "https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 <script src = "./assets/js/adminApp.js"></script>
 </body>
 </html>
