@@ -19,3 +19,27 @@ nightmare
 .catch(function (error) {
   console.error('Error:', error);
 });
+
+
+nightmare
+.click(':nth-child(4) > .nav-link')
+.click('p > span > a')
+.goto('http://localhost:8080/signup')
+.goto('http://localhost:8080/signup')
+.type('#signup > .text', 'test')
+.type('#signup > :nth-child(4)', 'test')
+.type('#signup > :nth-child(6)', 'password')
+.goto('http://localhost:8080/signup')
+.type('#signup > .text', 'test')
+.type('#signup > :nth-child(4)', 'test')
+.click('.navbar-brand')
+.goto('http://localhost:8080/index.html')
+.end()
+.then(function (result) {
+  console.log(result)
+})
+.catch(function (error) {
+  console.error('Error:', error);
+});
+
+
