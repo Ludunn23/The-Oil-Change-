@@ -49,7 +49,7 @@
           
                       <div class="container">
                           <label for="uname">
-                              <b>Username</b>
+                              <b>Username/email</b>
                           </label>
                           <input type="text" placeholder="Enter Username" name="uname" required>
           
@@ -74,7 +74,8 @@
               </div><hr>
 
               <div class = "container-fluid">
-
+                 <h5>Welcome, Administrator <span><a href="/logout" class="btn btn-primary btn-lg" role="button">Log out</a></span></h5>
+                    
                 <div class = "card">
                     <div class = "card-header">
                         Find a Customer
@@ -82,7 +83,7 @@
                     <div class = "card-body" id = "customer-search-card">
                         <form id = "customer-search-form">
                             <div class="input-group mb-3">
-                                    <input id = "customer-search" type="text" class="form-control" placeholder="Name or Username">
+                                    <input id = "customer-search" type="tel" class="form-control" placeholder="phone #">
                                     <div class="input-group-append">
                                       <button id = "customer-search-go" class="btn btn-primary" type="submit">Search</button>
                                     </div>
@@ -128,6 +129,7 @@
                                 <th class = "table-id">ID</th>
                                 <th>Name</th>
                                 <th>Username</th>
+                                <th>Phone #</th>
                             </thead>
                             <tbody id = "customers-display"></tbody>
                         </table>
@@ -185,8 +187,11 @@
                           <label for = "new-customer-name">Name: </label>
                           <input type = "text" id = "new-customer-name">
 
-                          <label for = "new-customer-username">Username</label>
+                          <label for = "new-customer-username">Username/e-mail</label>
                           <input type = "text" id = "new-customer-username">
+
+                          <label for ='new-customer-phone'>Phone #</label>
+                          <input type = "tel" id = 'new-customer-phone'>
                           
                           <label for = "new-customer-password">Password</label>
                           <input type = "password" id = "new-customer-password">

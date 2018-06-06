@@ -84,7 +84,7 @@ $(document).ready(function() {
                         "<td>" + i.serviceType + "</td>" +
                         "<td>" + i.date + "</td>" + 
                         "<td>" + i.mileage + "</td>" +
-                        "<td>" + i.url + "</td>" +
+                        // "<td>" + i.url + "</td>" +
                         "</tr>"
                     ));
                 }
