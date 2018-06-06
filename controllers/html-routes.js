@@ -16,8 +16,8 @@ var router = require('express').Router();
         res.sendFile(path.join(__dirname, "../public/servicemenu.html"));
     });
 
-    // router.get("/admin", function(req, res) {
-    //     res.sendFile(path.join(__dirname, "../public/admin.html"));
-    // });
+    router.get("/admin", function(req, res) {
+         res.sendFile(path.join(__dirname, "../public/admin.html"));
+     });
 
     module.exports = router;
