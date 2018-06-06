@@ -130,25 +130,14 @@ router.put("/api/car/:id", function(req, res) {
     })
 })
 
-//find a customer by name or username
+//find a customer by phone number
 router.get("/api/customer/:search", function(req, res){
-    db.Customer.findAll({
+    db.Customer.findOne({
         where: {
-            name: req.params.search
+            phone: req.params.search
         }
     }).then(function(result){
-        console.log(result);
-        if(result[0]){
-            res.json(result)
-        } else {
-            db.Customer.findAll({
-                where: {
-                    username: req.params.search
-                }
-            }).then(function(result2){
-                res.json(result2);
-            })
-        }
+        res.json(result)
     })
 });
 

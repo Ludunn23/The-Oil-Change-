@@ -1,6 +1,7 @@
 $(document).ready(function() {
     //DOM SELECTORS
     let $customerSearch = $("#customer-search"),
+        $adminLogout = $("#admin-logout"),
         $customerGo = $("#customer-search-go"),
         $allCustomers = $("#all-customers"),
         $allAdmins = $("#all-admins"),
@@ -8,6 +9,7 @@ $(document).ready(function() {
         $carGo = $("#car-search-go"),
         $newCustomer = $("#new-customer"),
         $newCustomerName = $("#new-customer-name"),
+        $newCustomerPhone = $("#new-customer-phone"),
         $newCustomerUsername = $("#new-customer-username"),
         $newCustomerPassword = $("#new-customer-password"),
         $addCustomer = $("#add-customer"),
@@ -52,6 +54,7 @@ $(document).ready(function() {
                         "<td>" + customer.id + "</td>" +
                         "<td>" + customer.name + "</td>" +
                         "<td>" + customer.username + "</td>" +
+                        "<td>" + customer.phone + "</td>" +
                         "<td><button class = 'btn btn-primary car-button' id = 'cars-" + customer.id + "'>See my Cars</button></td>" +
                         "<td><button class = 'btn btn-danger de-auth-button' id = 'de-authorize-" + customer.id + "'>Remove Admin</button></td>" +
                         "<td><button class = 'btn btn-warning add-car-button' id = 'add-car-" + customer.id + "'>New car for User</button></td>" +
@@ -65,6 +68,7 @@ $(document).ready(function() {
                     "<td>" + customer.id + "</td>" +
                     "<td>" + customer.name + "</td>" +
                     "<td>" + customer.username + "</td>" +
+                    "<td>" + customer.phone + "</td>" +
                     "<td><button class = 'btn btn-primary car-button' id = 'cars-" + customer.id + "'>See my Cars</button></td>" +
                     "<td><button class = 'btn btn-success auth-button' id = 'authorize-" + customer.id + "'>Make Admin</button></td>" +
                     "<td><button class = 'btn btn-warning add-car-button' id = 'add-car-" + customer.id + "'>New car for User</button></td>" +
@@ -171,13 +175,8 @@ $(document).ready(function() {
             })
         }
     }
-    //Initialize page
-    // updateCustomers();
-    // updateCars("all");
-    // updateServices("all");
 
     //listeners
-
     //see all customers
     $allCustomers.click(function(event){
         event.preventDefault();
@@ -207,10 +206,12 @@ $(document).ready(function() {
         event.preventDefault();
         var newCustomer = {
             name: $newCustomerName.val().trim(),
+            phone: $newCustomerPhone.val(),
             username: $newCustomerUsername.val().trim(),
             password: $newCustomerPassword.val().trim()
         };
         $newCustomerName.val("");
+        $newCustomerPhone.val("");
         $newCustomerUsername.val("");
         $newCustomerPassword.val("");
         $.post("/api/customer", newCustomer, function(result){
@@ -359,11 +360,10 @@ $(document).ready(function() {
         var search = $customerSearch.val().trim();
         $customersDisplay.empty();
         $.get("/api/customer/" + search, function(data){
-            data.map(i => {
-                showCustomer(i);
+            showCustomer(data);
             })
         })
-    });
+    
 
     //car search listener
     $carGo.click(function(event) {

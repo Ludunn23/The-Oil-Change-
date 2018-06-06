@@ -1,7 +1,7 @@
 body {font-family: 'Roboto', Arial, Helvetica, sans-serif;}
 
 /* Full-width input fields */
-input[type=text], input[type=password], input[type = number], input[type = date] {
+input[type=text], input[type=password], input[type = number], input[type = date], input[type = tel] {
     width: 100%;
     padding: 12px 20px;
     /* margin: 8px 0; */
